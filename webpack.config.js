@@ -3,6 +3,7 @@ let webpack = require('webpack');
 let path = require('path');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+
 module.exports = {
     entry: {
         app: [
@@ -27,10 +28,16 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: "babel-loader"
-            }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
+            { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
         ]
     },
     plugins: [
-        new ExtractTextPlugin("[name].css"),
+        new ExtractTextPlugin("[name].css")
     ]
 };
