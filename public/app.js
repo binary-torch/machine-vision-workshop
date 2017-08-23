@@ -10328,7 +10328,7 @@ return jQuery;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
-module.exports = __webpack_require__(13);
+module.exports = __webpack_require__(20);
 
 
 /***/ }),
@@ -10338,20 +10338,25 @@ module.exports = __webpack_require__(13);
 "use strict";
 
 
-var _vue = __webpack_require__(3);
+__webpack_require__(3);
+
+__webpack_require__(4);
+
+var _vue = __webpack_require__(5);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _App = __webpack_require__(6);
+var _App = __webpack_require__(8);
 
 var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = window.jQuery = __webpack_require__(0);
-__webpack_require__(10);
-__webpack_require__(11);
-__webpack_require__(12);
+__webpack_require__(17);
+__webpack_require__(18);
+__webpack_require__(19);
+// import './material-dashboard/material-dashboard'
 
 //vue
 
@@ -10361,6 +10366,1656 @@ new _vue2.default(_App2.default).$mount('#app');
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(jQuery) {
+
+!function (t) {
+  function o(t) {
+    return "undefined" == typeof t.which ? !0 : "number" == typeof t.which && t.which > 0 ? !t.ctrlKey && !t.metaKey && !t.altKey && 8 != t.which && 9 != t.which && 13 != t.which && 16 != t.which && 17 != t.which && 20 != t.which && 27 != t.which : !1;
+  }function i(o) {
+    var i = t(o);i.prop("disabled") || i.closest(".form-group").addClass("is-focused");
+  }function n(o) {
+    o.closest("label").hover(function () {
+      var o = t(this).find("input");o.prop("disabled") || i(o);
+    }, function () {
+      e(t(this).find("input"));
+    });
+  }function e(o) {
+    t(o).closest(".form-group").removeClass("is-focused");
+  }t.expr[":"].notmdproc = function (o) {
+    return t(o).data("mdproc") ? !1 : !0;
+  }, t.material = { options: { validate: !0, input: !0, ripples: !0, checkbox: !0, togglebutton: !0, radio: !0, arrive: !0, autofill: !1, withRipples: [".btn:not(.btn-link)", ".card-image", ".navbar a:not(.withoutripple)", ".footer a:not(.withoutripple)", ".dropdown-menu a", ".nav-tabs a:not(.withoutripple)", ".withripple", ".pagination li:not(.active):not(.disabled) a:not(.withoutripple)"].join(","), inputElements: "input.form-control, textarea.form-control, select.form-control", checkboxElements: ".checkbox > label > input[type=checkbox]", togglebuttonElements: ".togglebutton > label > input[type=checkbox]", radioElements: ".radio > label > input[type=radio]" }, checkbox: function checkbox(o) {
+      var i = t(o ? o : this.options.checkboxElements).filter(":notmdproc").data("mdproc", !0).after("<span class='checkbox-material'><span class='check'></span></span>");n(i);
+    }, togglebutton: function togglebutton(o) {
+      var i = t(o ? o : this.options.togglebuttonElements).filter(":notmdproc").data("mdproc", !0).after("<span class='toggle'></span>");n(i);
+    }, radio: function radio(o) {
+      var i = t(o ? o : this.options.radioElements).filter(":notmdproc").data("mdproc", !0).after("<span class='circle'></span><span class='check'></span>");n(i);
+    }, input: function input(o) {
+      t(o ? o : this.options.inputElements).filter(":notmdproc").data("mdproc", !0).each(function () {
+        var o = t(this),
+            i = o.closest(".form-group");0 === i.length && (o.wrap("<div class='form-group'></div>"), i = o.closest(".form-group")), o.attr("data-hint") && (o.after("<p class='help-block'>" + o.attr("data-hint") + "</p>"), o.removeAttr("data-hint"));var n = { "input-lg": "form-group-lg", "input-sm": "form-group-sm" };if (t.each(n, function (t, n) {
+          o.hasClass(t) && (o.removeClass(t), i.addClass(n));
+        }), o.hasClass("floating-label")) {
+          var e = o.attr("placeholder");o.attr("placeholder", null).removeClass("floating-label");var a = o.attr("id"),
+              r = "";a && (r = "for='" + a + "'"), i.addClass("label-floating"), o.after("<label " + r + "class='control-label'>" + e + "</label>");
+        }(null === o.val() || "undefined" == o.val() || "" === o.val()) && i.addClass("is-empty"), i.append("<span class='material-input'></span>"), i.find("input[type=file]").length > 0 && i.addClass("is-fileinput");
+      });
+    }, attachInputEventHandlers: function attachInputEventHandlers() {
+      var n = this.options.validate;t(document).on("change", ".checkbox input[type=checkbox]", function () {
+        t(this).blur();
+      }).on("keydown paste", ".form-control", function (i) {
+        o(i) && t(this).closest(".form-group").removeClass("is-empty");
+      }).on("keyup change", ".form-control", function () {
+        var o = t(this),
+            i = o.closest(".form-group"),
+            e = "undefined" == typeof o[0].checkValidity || o[0].checkValidity();"" === o.val() ? i.addClass("is-empty") : i.removeClass("is-empty"), n && (e ? i.removeClass("has-error") : i.addClass("has-error"));
+      }).on("focus", ".form-control, .form-group.is-fileinput", function () {
+        i(this);
+      }).on("blur", ".form-control, .form-group.is-fileinput", function () {
+        e(this);
+      }).on("change", ".form-group input", function () {
+        var o = t(this);if ("file" != o.attr("type")) {
+          var i = o.closest(".form-group"),
+              n = o.val();n ? i.removeClass("is-empty") : i.addClass("is-empty");
+        }
+      }).on("change", ".form-group.is-fileinput input[type='file']", function () {
+        var o = t(this),
+            i = o.closest(".form-group"),
+            n = "";t.each(this.files, function (t, o) {
+          n += o.name + ", ";
+        }), n = n.substring(0, n.length - 2), n ? i.removeClass("is-empty") : i.addClass("is-empty"), i.find("input.form-control[readonly]").val(n);
+      });
+    }, ripples: function ripples(o) {
+      t(o ? o : this.options.withRipples).ripples();
+    }, autofill: function autofill() {
+      var o = setInterval(function () {
+        t("input[type!=checkbox]").each(function () {
+          var o = t(this);o.val() && o.val() !== o.attr("value") && o.trigger("change");
+        });
+      }, 100);setTimeout(function () {
+        clearInterval(o);
+      }, 1e4);
+    }, attachAutofillEventHandlers: function attachAutofillEventHandlers() {
+      var o;t(document).on("focus", "input", function () {
+        var i = t(this).parents("form").find("input").not("[type=file]");o = setInterval(function () {
+          i.each(function () {
+            var o = t(this);o.val() !== o.attr("value") && o.trigger("change");
+          });
+        }, 100);
+      }).on("blur", ".form-group input", function () {
+        clearInterval(o);
+      });
+    }, init: function init(o) {
+      this.options = t.extend({}, this.options, o);var i = t(document);t.fn.ripples && this.options.ripples && this.ripples(), this.options.input && (this.input(), this.attachInputEventHandlers()), this.options.checkbox && this.checkbox(), this.options.togglebutton && this.togglebutton(), this.options.radio && this.radio(), this.options.autofill && (this.autofill(), this.attachAutofillEventHandlers()), document.arrive && this.options.arrive && (t.fn.ripples && this.options.ripples && i.arrive(this.options.withRipples, function () {
+        t.material.ripples(t(this));
+      }), this.options.input && i.arrive(this.options.inputElements, function () {
+        t.material.input(t(this));
+      }), this.options.checkbox && i.arrive(this.options.checkboxElements, function () {
+        t.material.checkbox(t(this));
+      }), this.options.radio && i.arrive(this.options.radioElements, function () {
+        t.material.radio(t(this));
+      }), this.options.togglebutton && i.arrive(this.options.togglebuttonElements, function () {
+        t.material.togglebutton(t(this));
+      }));
+    } };
+}(jQuery), function (t, o, i, n) {
+  "use strict";
+  function e(o, i) {
+    r = this, this.element = t(o), this.options = t.extend({}, s, i), this._defaults = s, this._name = a, this.init();
+  }var a = "ripples",
+      r = null,
+      s = {};e.prototype.init = function () {
+    var i = this.element;i.on("mousedown touchstart", function (n) {
+      if (!r.isTouch() || "mousedown" !== n.type) {
+        i.find(".ripple-container").length || i.append('<div class="ripple-container"></div>');var e = i.children(".ripple-container"),
+            a = r.getRelY(e, n),
+            s = r.getRelX(e, n);if (a || s) {
+          var l = r.getRipplesColor(i),
+              p = t("<div></div>");p.addClass("ripple").css({ left: s, top: a, "background-color": l }), e.append(p), function () {
+            return o.getComputedStyle(p[0]).opacity;
+          }(), r.rippleOn(i, p), setTimeout(function () {
+            r.rippleEnd(p);
+          }, 500), i.on("mouseup mouseleave touchend", function () {
+            p.data("mousedown", "off"), "off" === p.data("animating") && r.rippleOut(p);
+          });
+        }
+      }
+    });
+  }, e.prototype.getNewSize = function (t, o) {
+    return Math.max(t.outerWidth(), t.outerHeight()) / o.outerWidth() * 2.5;
+  }, e.prototype.getRelX = function (t, o) {
+    var i = t.offset();return r.isTouch() ? (o = o.originalEvent, 1 === o.touches.length ? o.touches[0].pageX - i.left : !1) : o.pageX - i.left;
+  }, e.prototype.getRelY = function (t, o) {
+    var i = t.offset();return r.isTouch() ? (o = o.originalEvent, 1 === o.touches.length ? o.touches[0].pageY - i.top : !1) : o.pageY - i.top;
+  }, e.prototype.getRipplesColor = function (t) {
+    var i = t.data("ripple-color") ? t.data("ripple-color") : o.getComputedStyle(t[0]).color;return i;
+  }, e.prototype.hasTransitionSupport = function () {
+    var t = i.body || i.documentElement,
+        o = t.style,
+        e = o.transition !== n || o.WebkitTransition !== n || o.MozTransition !== n || o.MsTransition !== n || o.OTransition !== n;return e;
+  }, e.prototype.isTouch = function () {
+    return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    );
+  }, e.prototype.rippleEnd = function (t) {
+    t.data("animating", "off"), "off" === t.data("mousedown") && r.rippleOut(t);
+  }, e.prototype.rippleOut = function (t) {
+    t.off(), r.hasTransitionSupport() ? t.addClass("ripple-out") : t.animate({ opacity: 0 }, 100, function () {
+      t.trigger("transitionend");
+    }), t.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function () {
+      t.remove();
+    });
+  }, e.prototype.rippleOn = function (t, o) {
+    var i = r.getNewSize(t, o);r.hasTransitionSupport() ? o.css({ "-ms-transform": "scale(" + i + ")", "-moz-transform": "scale(" + i + ")", "-webkit-transform": "scale(" + i + ")", transform: "scale(" + i + ")" }).addClass("ripple-on").data("animating", "on").data("mousedown", "on") : o.animate({ width: 2 * Math.max(t.outerWidth(), t.outerHeight()), height: 2 * Math.max(t.outerWidth(), t.outerHeight()), "margin-left": -1 * Math.max(t.outerWidth(), t.outerHeight()), "margin-top": -1 * Math.max(t.outerWidth(), t.outerHeight()), opacity: .2 }, 500, function () {
+      o.trigger("transitionend");
+    });
+  }, t.fn.ripples = function (o) {
+    return this.each(function () {
+      t.data(this, "plugin_" + a) || t.data(this, "plugin_" + a, new e(this, o));
+    });
+  };
+}(jQuery, window, document);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/*!
+ * sweetalert2 v5.3.5
+ * Released under the MIT License.
+ */
+(function (global, factory) {
+  ( false ? 'undefined' : _typeof(exports)) === 'object' && typeof module !== 'undefined' ? module.exports = factory() :  true ? !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : global.Sweetalert2 = factory();
+})(undefined, function () {
+  'use strict';
+
+  var swalPrefix = 'swal2-';
+
+  var prefix = function prefix(items) {
+    var result = {};
+    for (var i in items) {
+      result[items[i]] = swalPrefix + items[i];
+    }
+    return result;
+  };
+
+  var swalClasses = prefix(['container', 'in', 'iosfix', 'modal', 'overlay', 'fade', 'show', 'hide', 'noanimation', 'close', 'content', 'spacer', 'confirm', 'cancel', 'icon', 'image', 'input', 'file', 'range', 'select', 'radio', 'checkbox', 'textarea', 'inputerror', 'validationerror', 'progresssteps', 'activeprogressstep', 'progresscircle', 'progressline', 'loading', 'styled']);
+
+  var iconTypes = prefix(['success', 'warning', 'info', 'question', 'error']);
+
+  var defaultParams = {
+    title: '',
+    text: '',
+    html: '',
+    type: null,
+    customClass: '',
+    animation: true,
+    allowOutsideClick: true,
+    allowEscapeKey: true,
+    showConfirmButton: true,
+    showCancelButton: false,
+    preConfirm: null,
+    confirmButtonText: 'OK',
+    confirmButtonColor: '#3085d6',
+    confirmButtonClass: null,
+    cancelButtonText: 'Cancel',
+    cancelButtonColor: '#aaa',
+    cancelButtonClass: null,
+    buttonsStyling: true,
+    reverseButtons: false,
+    focusCancel: false,
+    showCloseButton: false,
+    showLoaderOnConfirm: false,
+    imageUrl: null,
+    imageWidth: null,
+    imageHeight: null,
+    imageClass: null,
+    timer: null,
+    width: 500,
+    padding: 20,
+    background: '#fff',
+    input: null,
+    inputPlaceholder: '',
+    inputValue: '',
+    inputOptions: {},
+    inputAutoTrim: true,
+    inputClass: null,
+    inputAttributes: {},
+    inputValidator: null,
+    progressSteps: [],
+    currentProgressStep: null,
+    progressStepsDistance: '40px',
+    onOpen: null,
+    onClose: null
+  };
+
+  var sweetHTML = '<div class="' + swalClasses.modal + '" style="display: none" tabIndex="-1">' + '<ul class="' + swalClasses.progresssteps + '"></ul>' + '<div class="' + swalClasses.icon + ' ' + iconTypes.error + '">' + '<span class="x-mark"><span class="line left"></span><span class="line right"></span></span>' + '</div>' + '<div class="' + swalClasses.icon + ' ' + iconTypes.question + '">?</div>' + '<div class="' + swalClasses.icon + ' ' + iconTypes.warning + '">!</div>' + '<div class="' + swalClasses.icon + ' ' + iconTypes.info + '">i</div>' + '<div class="' + swalClasses.icon + ' ' + iconTypes.success + '">' + '<span class="line tip"></span> <span class="line long"></span>' + '<div class="placeholder"></div> <div class="fix"></div>' + '</div>' + '<img class="' + swalClasses.image + '">' + '<h2></h2>' + '<div class="' + swalClasses.content + '"></div>' + '<input class="' + swalClasses.input + '">' + '<input type="file" class="' + swalClasses.file + '">' + '<div class="' + swalClasses.range + '">' + '<output></output>' + '<input type="range">' + '</div>' + '<select class="' + swalClasses.select + '"></select>' + '<div class="' + swalClasses.radio + '"></div>' + '<label for="' + swalClasses.checkbox + '" class="' + swalClasses.checkbox + '">' + '<input type="checkbox">' + '</label>' + '<textarea class="' + swalClasses.textarea + '"></textarea>' + '<div class="' + swalClasses.validationerror + '"></div>' + '<hr class="' + swalClasses.spacer + '">' + '<button type="button" class="' + swalClasses.confirm + '">OK</button>' + '<button type="button" class="' + swalClasses.cancel + '">Cancel</button>' + '<span class="' + swalClasses.close + '">&times;</span>' + '</div>';
+
+  var sweetContainer;
+
+  var existingSweetContainers = document.getElementsByClassName(swalClasses.container);
+
+  if (existingSweetContainers.length) {
+    sweetContainer = existingSweetContainers[0];
+  } else {
+    sweetContainer = document.createElement('div');
+    sweetContainer.className = swalClasses.container;
+    sweetContainer.innerHTML = sweetHTML;
+  }
+
+  var extend = function extend(a, b) {
+    for (var key in b) {
+      if (b.hasOwnProperty(key)) {
+        a[key] = b[key];
+      }
+    }
+
+    return a;
+  };
+
+  /*
+   * Set hover, active and focus-states for buttons (source: http://www.sitepoint.com/javascript-generate-lighter-darker-color)
+   */
+  var colorLuminance = function colorLuminance(hex, lum) {
+    // Validate hex string
+    hex = String(hex).replace(/[^0-9a-f]/gi, '');
+    if (hex.length < 6) {
+      hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    lum = lum || 0;
+
+    // Convert to decimal and change luminosity
+    var rgb = '#';
+    for (var i = 0; i < 3; i++) {
+      var c = parseInt(hex.substr(i * 2, 2), 16);
+      c = Math.round(Math.min(Math.max(0, c + c * lum), 255)).toString(16);
+      rgb += ('00' + c).substr(c.length);
+    }
+
+    return rgb;
+  };
+
+  // Remember state in cases where opening and handling a modal will fiddle with it.
+  var states = {
+    previousWindowKeyDown: null,
+    previousActiveElement: null,
+    previousBodyPadding: null
+
+    /*
+     * Add modal + overlay to DOM
+     */
+  };var init = function init() {
+    if (typeof document === 'undefined') {
+      console.error('SweetAlert2 requires document to initialize');
+      return;
+    } else if (document.getElementsByClassName(swalClasses.container).length) {
+      return;
+    }
+
+    document.body.appendChild(sweetContainer);
+
+    var modal = getModal();
+    var input = getChildByClass(modal, swalClasses.input);
+    var file = getChildByClass(modal, swalClasses.file);
+    var range = modal.querySelector('.' + swalClasses.range + ' input');
+    var select = getChildByClass(modal, swalClasses.select);
+    var checkbox = modal.querySelector('.' + swalClasses.checkbox + ' input');
+    var textarea = getChildByClass(modal, swalClasses.textarea);
+
+    input.oninput = function () {
+      sweetAlert.resetValidationError();
+    };
+
+    input.onkeyup = function (event) {
+      event.stopPropagation();
+      if (event.keyCode === 13) {
+        sweetAlert.clickConfirm();
+      }
+    };
+
+    file.onchange = function () {
+      sweetAlert.resetValidationError();
+    };
+
+    range.oninput = function () {
+      sweetAlert.resetValidationError();
+      range.previousSibling.value = range.value;
+    };
+
+    range.onchange = function () {
+      sweetAlert.resetValidationError();
+      range.previousSibling.value = range.value;
+    };
+
+    select.onchange = function () {
+      sweetAlert.resetValidationError();
+    };
+
+    checkbox.onchange = function () {
+      sweetAlert.resetValidationError();
+    };
+
+    textarea.oninput = function () {
+      sweetAlert.resetValidationError();
+    };
+
+    return modal;
+  };
+
+  /*
+   * Manipulate DOM
+   */
+  var elementByClass = function elementByClass(className) {
+    return sweetContainer.querySelector('.' + className);
+  };
+
+  var getModal = function getModal() {
+    return document.body.querySelector('.' + swalClasses.modal) || init();
+  };
+
+  var getIcons = function getIcons() {
+    var modal = getModal();
+    return modal.querySelectorAll('.' + swalClasses.icon);
+  };
+
+  var getSpacer = function getSpacer() {
+    return elementByClass(swalClasses.spacer);
+  };
+
+  var getProgressSteps = function getProgressSteps() {
+    return elementByClass(swalClasses.progresssteps);
+  };
+
+  var getValidationError = function getValidationError() {
+    return elementByClass(swalClasses.validationerror);
+  };
+
+  var getConfirmButton = function getConfirmButton() {
+    return elementByClass(swalClasses.confirm);
+  };
+
+  var getCancelButton = function getCancelButton() {
+    return elementByClass(swalClasses.cancel);
+  };
+
+  var getCloseButton = function getCloseButton() {
+    return elementByClass(swalClasses.close);
+  };
+
+  var getFocusableElements = function getFocusableElements(focusCancel) {
+    var buttons = [getConfirmButton(), getCancelButton()];
+    if (focusCancel) {
+      buttons.reverse();
+    }
+    return buttons.concat(Array.prototype.slice.call(getModal().querySelectorAll('button:not([class^=' + swalPrefix + ']), input:not([type=hidden]), textarea, select')));
+  };
+
+  var hasClass = function hasClass(elem, className) {
+    return elem.classList.contains(className);
+  };
+
+  var focusInput = function focusInput(input) {
+    input.focus();
+
+    // place cursor at end of text in text input
+    if (input.type !== 'file') {
+      // http://stackoverflow.com/a/2345915/1331425
+      var val = input.value;
+      input.value = '';
+      input.value = val;
+    }
+  };
+
+  var addClass = function addClass(elem, className) {
+    if (!elem || !className) {
+      return;
+    }
+    var classes = className.split(/\s+/);
+    classes.forEach(function (className) {
+      elem.classList.add(className);
+    });
+  };
+
+  var removeClass = function removeClass(elem, className) {
+    if (!elem || !className) {
+      return;
+    }
+    var classes = className.split(/\s+/);
+    classes.forEach(function (className) {
+      elem.classList.remove(className);
+    });
+  };
+
+  var getChildByClass = function getChildByClass(elem, className) {
+    for (var i = 0; i < elem.childNodes.length; i++) {
+      if (hasClass(elem.childNodes[i], className)) {
+        return elem.childNodes[i];
+      }
+    }
+  };
+
+  var show = function show(elem, display) {
+    if (!display) {
+      display = 'block';
+    }
+    elem.style.opacity = '';
+    elem.style.display = display;
+  };
+
+  var hide = function hide(elem) {
+    elem.style.opacity = '';
+    elem.style.display = 'none';
+  };
+
+  var empty = function empty(elem) {
+    while (elem.firstChild) {
+      elem.removeChild(elem.firstChild);
+    }
+  };
+
+  // borrowed from jqeury $(elem).is(':visible') implementation
+  var isVisible = function isVisible(elem) {
+    return elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length;
+  };
+
+  var removeStyleProperty = function removeStyleProperty(elem, property) {
+    if (elem.style.removeProperty) {
+      elem.style.removeProperty(property);
+    } else {
+      elem.style.removeAttribute(property);
+    }
+  };
+
+  var fireClick = function fireClick(node) {
+    // Taken from http://www.nonobtrusive.com/2011/11/29/programatically-fire-crossbrowser-click-event-with-javascript/
+    // Then fixed for today's Chrome browser.
+    if (typeof MouseEvent === 'function') {
+      // Up-to-date approach
+      var mevt = new MouseEvent('click', {
+        view: window,
+        bubbles: false,
+        cancelable: true
+      });
+      node.dispatchEvent(mevt);
+    } else if (document.createEvent) {
+      // Fallback
+      var evt = document.createEvent('MouseEvents');
+      evt.initEvent('click', false, false);
+      node.dispatchEvent(evt);
+    } else if (document.createEventObject) {
+      node.fireEvent('onclick');
+    } else if (typeof node.onclick === 'function') {
+      node.onclick();
+    }
+  };
+
+  var stopEventPropagation = function stopEventPropagation(e) {
+    // In particular, make sure the space bar doesn't scroll the main window.
+    if (typeof e.stopPropagation === 'function') {
+      e.stopPropagation();
+      e.preventDefault();
+    } else if (window.event && window.event.hasOwnProperty('cancelBubble')) {
+      window.event.cancelBubble = true;
+    }
+  };
+
+  var animationEndEvent = function () {
+    var testEl = document.createElement('div');
+    var transEndEventNames = {
+      'WebkitAnimation': 'webkitAnimationEnd',
+      'OAnimation': 'oAnimationEnd oanimationend',
+      'msAnimation': 'MSAnimationEnd',
+      'animation': 'animationend'
+    };
+    for (var i in transEndEventNames) {
+      if (transEndEventNames.hasOwnProperty(i) && testEl.style[i] !== undefined) {
+        return transEndEventNames[i];
+      }
+    }
+
+    return false;
+  }();
+
+  // Reset the page to its previous state
+  var resetPrevState = function resetPrevState() {
+    var modal = getModal();
+    window.onkeydown = states.previousWindowKeyDown;
+    if (states.previousActiveElement && states.previousActiveElement.focus) {
+      states.previousActiveElement.focus();
+    }
+    clearTimeout(modal.timeout);
+  };
+
+  // Measure width of scrollbar
+  // https://github.com/twbs/bootstrap/blob/master/js/modal.js#L279-L286
+  var measureScrollbar = function measureScrollbar() {
+    var scrollDiv = document.createElement('div');
+    scrollDiv.style.width = '50px';
+    scrollDiv.style.height = '50px';
+    scrollDiv.style.overflow = 'scroll';
+    document.body.appendChild(scrollDiv);
+    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
+    document.body.removeChild(scrollDiv);
+    return scrollbarWidth;
+  };
+
+  // JavaScript Debounce Function
+  // https://davidwalsh.name/javascript-debounce-function
+  var debounce = function debounce(func, wait, immediate) {
+    var timeout;
+    return function () {
+      var context = this;
+      var args = arguments;
+      var later = function later() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+
+  var modalParams = extend({}, defaultParams);
+  var queue = [];
+  var swal2Observer;
+
+  /*
+   * Set type, text and actions on modal
+   */
+  var setParameters = function setParameters(params) {
+    var modal = getModal();
+
+    for (var param in params) {
+      if (!defaultParams.hasOwnProperty(param) && param !== 'extraParams') {
+        console.warn('SweetAlert2: Unknown parameter "' + param + '"');
+      }
+    }
+
+    // set modal width and margin-left
+    modal.style.width = typeof params.width === 'number' ? params.width + 'px' : params.width;
+
+    modal.style.padding = params.padding + 'px';
+    modal.style.background = params.background;
+
+    var $title = modal.querySelector('h2');
+    var $content = modal.querySelector('.' + swalClasses.content);
+    var $confirmBtn = getConfirmButton();
+    var $cancelBtn = getCancelButton();
+    var $closeButton = modal.querySelector('.' + swalClasses.close);
+
+    // Title
+    $title.innerHTML = params.title.split('\n').join('<br>');
+
+    // Content
+    var i;
+    if (params.text || params.html) {
+      if (_typeof(params.html) === 'object') {
+        $content.innerHTML = '';
+        if (0 in params.html) {
+          for (i = 0; i in params.html; i++) {
+            $content.appendChild(params.html[i].cloneNode(true));
+          }
+        } else {
+          $content.appendChild(params.html.cloneNode(true));
+        }
+      } else {
+        $content.innerHTML = params.html || params.text.split('\n').join('<br>');
+      }
+      show($content);
+    } else {
+      hide($content);
+    }
+
+    // Close button
+    if (params.showCloseButton) {
+      show($closeButton);
+    } else {
+      hide($closeButton);
+    }
+
+    // Custom Class
+    modal.className = swalClasses.modal;
+    if (params.customClass) {
+      addClass(modal, params.customClass);
+    }
+
+    // Progress steps
+    var progressStepsContainer = getProgressSteps();
+    var currentProgressStep = parseInt(params.currentProgressStep === null ? sweetAlert.getQueueStep() : params.currentProgressStep, 10);
+    if (params.progressSteps.length) {
+      show(progressStepsContainer);
+      empty(progressStepsContainer);
+      if (currentProgressStep >= params.progressSteps.length) {
+        console.warn('SweetAlert2: Invalid currentProgressStep parameter, it should be less than progressSteps.length ' + '(currentProgressStep like JS arrays starts from 0)');
+      }
+      params.progressSteps.forEach(function (step, index) {
+        var circle = document.createElement('li');
+        addClass(circle, swalClasses.progresscircle);
+        circle.innerHTML = step;
+        if (index === currentProgressStep) {
+          addClass(circle, swalClasses.activeprogressstep);
+        }
+        progressStepsContainer.appendChild(circle);
+        if (index !== params.progressSteps.length - 1) {
+          var line = document.createElement('li');
+          addClass(line, swalClasses.progressline);
+          line.style.width = params.progressStepsDistance;
+          progressStepsContainer.appendChild(line);
+        }
+      });
+    } else {
+      hide(progressStepsContainer);
+    }
+
+    // Icon
+    var icons = getIcons();
+    for (i = 0; i < icons.length; i++) {
+      hide(icons[i]);
+    }
+    if (params.type) {
+      var validType = false;
+      for (var iconType in iconTypes) {
+        if (params.type === iconType) {
+          validType = true;
+          break;
+        }
+      }
+      if (!validType) {
+        console.error('SweetAlert2: Unknown alert type: ' + params.type);
+        return false;
+      }
+      var $icon = modal.querySelector('.' + swalClasses.icon + '.' + iconTypes[params.type]);
+      show($icon);
+
+      // Animate icon
+      switch (params.type) {
+        case 'success':
+          addClass($icon, 'animate');
+          addClass($icon.querySelector('.tip'), 'animate-success-tip');
+          addClass($icon.querySelector('.long'), 'animate-success-long');
+          break;
+        case 'error':
+          addClass($icon, 'animate-error-icon');
+          addClass($icon.querySelector('.x-mark'), 'animate-x-mark');
+          break;
+        case 'warning':
+          addClass($icon, 'pulse-warning');
+          break;
+        default:
+          break;
+      }
+    }
+
+    // Custom image
+    var $customImage = modal.querySelector('.' + swalClasses.image);
+    if (params.imageUrl) {
+      $customImage.setAttribute('src', params.imageUrl);
+      show($customImage);
+
+      if (params.imageWidth) {
+        $customImage.setAttribute('width', params.imageWidth);
+      } else {
+        $customImage.removeAttribute('width');
+      }
+
+      if (params.imageHeight) {
+        $customImage.setAttribute('height', params.imageHeight);
+      } else {
+        $customImage.removeAttribute('height');
+      }
+
+      $customImage.className = swalClasses.image;
+      if (params.imageClass) {
+        addClass($customImage, params.imageClass);
+      }
+    } else {
+      hide($customImage);
+    }
+
+    // Cancel button
+    if (params.showCancelButton) {
+      $cancelBtn.style.display = 'inline-block';
+    } else {
+      hide($cancelBtn);
+    }
+
+    // Confirm button
+    if (params.showConfirmButton) {
+      removeStyleProperty($confirmBtn, 'display');
+    } else {
+      hide($confirmBtn);
+    }
+
+    // Buttons spacer
+    var spacer = getSpacer();
+    if (!params.showConfirmButton && !params.showCancelButton) {
+      hide(spacer);
+    } else {
+      show(spacer);
+    }
+
+    // Edit text on cancel and confirm buttons
+    $confirmBtn.innerHTML = params.confirmButtonText;
+    $cancelBtn.innerHTML = params.cancelButtonText;
+
+    // Set buttons to selected background colors
+    if (params.buttonsStyling) {
+      $confirmBtn.style.backgroundColor = params.confirmButtonColor;
+      $cancelBtn.style.backgroundColor = params.cancelButtonColor;
+    }
+
+    // Add buttons custom classes
+    $confirmBtn.className = swalClasses.confirm;
+    addClass($confirmBtn, params.confirmButtonClass);
+    $cancelBtn.className = swalClasses.cancel;
+    addClass($cancelBtn, params.cancelButtonClass);
+
+    // Buttons styling
+    if (params.buttonsStyling) {
+      addClass($confirmBtn, swalClasses.styled);
+      addClass($cancelBtn, swalClasses.styled);
+    } else {
+      removeClass($confirmBtn, swalClasses.styled);
+      removeClass($cancelBtn, swalClasses.styled);
+
+      $confirmBtn.style.backgroundColor = $confirmBtn.style.borderLeftColor = $confirmBtn.style.borderRightColor = '';
+      $cancelBtn.style.backgroundColor = $cancelBtn.style.borderLeftColor = $cancelBtn.style.borderRightColor = '';
+    }
+
+    // CSS animation
+    if (params.animation === true) {
+      removeClass(modal, swalClasses.noanimation);
+    } else {
+      addClass(modal, swalClasses.noanimation);
+    }
+  };
+
+  /*
+   * Animations
+   */
+  var openModal = function openModal(animation, onComplete) {
+    var modal = getModal();
+    if (animation) {
+      addClass(modal, swalClasses.show);
+      addClass(sweetContainer, swalClasses.fade);
+      removeClass(modal, swalClasses.hide);
+    } else {
+      removeClass(modal, swalClasses.fade);
+    }
+    show(modal);
+
+    // scrolling is 'hidden' until animation is done, after that 'auto'
+    sweetContainer.style.overflowY = 'hidden';
+    if (animationEndEvent && !hasClass(modal, swalClasses.noanimation)) {
+      modal.addEventListener(animationEndEvent, function swalCloseEventFinished() {
+        modal.removeEventListener(animationEndEvent, swalCloseEventFinished);
+        sweetContainer.style.overflowY = 'auto';
+      });
+    } else {
+      sweetContainer.style.overflowY = 'auto';
+    }
+
+    addClass(sweetContainer, swalClasses.in);
+    addClass(document.body, swalClasses.in);
+    fixScrollbar();
+    iOSfix();
+    states.previousActiveElement = document.activeElement;
+    if (onComplete !== null && typeof onComplete === 'function') {
+      onComplete.call(this, modal);
+    }
+  };
+
+  function fixScrollbar() {
+    // for queues, do not do this more than once
+    if (states.previousBodyPadding !== null) {
+      return;
+    }
+    // if the body has overflow
+    if (document.body.scrollHeight > window.innerHeight) {
+      // add padding so the content doesn't shift after removal of scrollbar
+      states.previousBodyPadding = document.body.style.paddingRight;
+      document.body.style.paddingRight = measureScrollbar() + 'px';
+    }
+  }
+
+  function undoScrollbar() {
+    if (states.previousBodyPadding !== null) {
+      document.body.style.paddingRight = states.previousBodyPadding;
+      states.previousBodyPadding = null;
+    }
+  }
+
+  // Fix iOS scrolling http://stackoverflow.com/q/39626302/1331425
+  function iOSfix() {
+    var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    if (iOS && !hasClass(document.body, swalClasses.iosfix)) {
+      var offset = document.body.scrollTop;
+      document.body.style.top = offset * -1 + 'px';
+      addClass(document.body, swalClasses.iosfix);
+    }
+  }
+
+  function undoIOSfix() {
+    if (hasClass(document.body, swalClasses.iosfix)) {
+      var offset = parseInt(document.body.style.top, 10);
+      removeClass(document.body, swalClasses.iosfix);
+      document.body.scrollTop = offset * -1;
+    }
+  }
+
+  function modalDependant() {
+    if (arguments[0] === undefined) {
+      console.error('SweetAlert2 expects at least 1 attribute!');
+      return false;
+    }
+
+    var params = extend({}, modalParams);
+
+    switch (_typeof(arguments[0])) {
+
+      case 'string':
+        params.title = arguments[0];
+        params.text = arguments[1] || '';
+        params.type = arguments[2] || '';
+
+        break;
+
+      case 'object':
+        extend(params, arguments[0]);
+        params.extraParams = arguments[0].extraParams;
+
+        if (params.input === 'email' && params.inputValidator === null) {
+          params.inputValidator = function (email) {
+            return new Promise(function (resolve, reject) {
+              var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+              if (emailRegex.test(email)) {
+                resolve();
+              } else {
+                reject('Invalid email address');
+              }
+            });
+          };
+        }
+
+        break;
+
+      default:
+        console.error('SweetAlert2: Unexpected type of argument! Expected "string" or "object", got ' + _typeof(arguments[0]));
+        return false;
+    }
+
+    setParameters(params);
+
+    // Modal interactions
+    var modal = getModal();
+
+    return new Promise(function (resolve, reject) {
+      // Close on timer
+      if (params.timer) {
+        modal.timeout = setTimeout(function () {
+          sweetAlert.closeModal(params.onClose);
+          reject('timer');
+        }, params.timer);
+      }
+
+      // Get input element by specified type or, if type isn't specified, by params.input
+      var getInput = function getInput(inputType) {
+        inputType = inputType || params.input;
+        switch (inputType) {
+          case 'select':
+          case 'textarea':
+          case 'file':
+            return getChildByClass(modal, swalClasses[inputType]);
+          case 'checkbox':
+            return modal.querySelector('.' + swalClasses.checkbox + ' input');
+          case 'radio':
+            return modal.querySelector('.' + swalClasses.radio + ' input:checked') || modal.querySelector('.' + swalClasses.radio + ' input:first-child');
+          case 'range':
+            return modal.querySelector('.' + swalClasses.range + ' input');
+          default:
+            return getChildByClass(modal, swalClasses.input);
+        }
+      };
+
+      // Get the value of the modal input
+      var getInputValue = function getInputValue() {
+        var input = getInput();
+        if (!input) {
+          return null;
+        }
+        switch (params.input) {
+          case 'checkbox':
+            return input.checked ? 1 : 0;
+          case 'radio':
+            return input.checked ? input.value : null;
+          case 'file':
+            return input.files.length ? input.files[0] : null;
+          default:
+            return params.inputAutoTrim ? input.value.trim() : input.value;
+        }
+      };
+
+      // input autofocus
+      if (params.input) {
+        setTimeout(function () {
+          var input = getInput();
+          if (input) {
+            focusInput(input);
+          }
+        }, 0);
+      }
+
+      var confirm = function confirm(value) {
+        if (params.showLoaderOnConfirm) {
+          sweetAlert.showLoading();
+        }
+
+        if (params.preConfirm) {
+          params.preConfirm(value, params.extraParams).then(function (preConfirmValue) {
+            sweetAlert.closeModal(params.onClose);
+            resolve(preConfirmValue || value);
+          }, function (error) {
+            sweetAlert.hideLoading();
+            if (error) {
+              sweetAlert.showValidationError(error);
+            }
+          });
+        } else {
+          sweetAlert.closeModal(params.onClose);
+          resolve(value);
+        }
+      };
+
+      // Mouse interactions
+      var onButtonEvent = function onButtonEvent(event) {
+        var e = event || window.event;
+        var target = e.target || e.srcElement;
+        var confirmBtn = getConfirmButton();
+        var cancelBtn = getCancelButton();
+        var targetedConfirm = confirmBtn === target || confirmBtn.contains(target);
+        var targetedCancel = cancelBtn === target || cancelBtn.contains(target);
+
+        switch (e.type) {
+          case 'mouseover':
+          case 'mouseup':
+            if (params.buttonsStyling) {
+              if (targetedConfirm) {
+                confirmBtn.style.backgroundColor = colorLuminance(params.confirmButtonColor, -0.1);
+              } else if (targetedCancel) {
+                cancelBtn.style.backgroundColor = colorLuminance(params.cancelButtonColor, -0.1);
+              }
+            }
+            break;
+          case 'mouseout':
+            if (params.buttonsStyling) {
+              if (targetedConfirm) {
+                confirmBtn.style.backgroundColor = params.confirmButtonColor;
+              } else if (targetedCancel) {
+                cancelBtn.style.backgroundColor = params.cancelButtonColor;
+              }
+            }
+            break;
+          case 'mousedown':
+            if (params.buttonsStyling) {
+              if (targetedConfirm) {
+                confirmBtn.style.backgroundColor = colorLuminance(params.confirmButtonColor, -0.2);
+              } else if (targetedCancel) {
+                cancelBtn.style.backgroundColor = colorLuminance(params.cancelButtonColor, -0.2);
+              }
+            }
+            break;
+          case 'click':
+            // Clicked 'confirm'
+            if (targetedConfirm && sweetAlert.isVisible()) {
+              if (params.input) {
+                var inputValue = getInputValue();
+
+                if (params.inputValidator) {
+                  sweetAlert.disableInput();
+                  params.inputValidator(inputValue, params.extraParams).then(function () {
+                    sweetAlert.enableInput();
+                    confirm(inputValue);
+                  }, function (error) {
+                    sweetAlert.enableInput();
+                    if (error) {
+                      sweetAlert.showValidationError(error);
+                    }
+                  });
+                } else {
+                  confirm(inputValue);
+                }
+              } else {
+                confirm(true);
+              }
+
+              // Clicked 'cancel'
+            } else if (targetedCancel && sweetAlert.isVisible()) {
+              sweetAlert.closeModal(params.onClose);
+              reject('cancel');
+            }
+
+            break;
+          default:
+        }
+      };
+
+      var $buttons = modal.querySelectorAll('button');
+      var i;
+      for (i = 0; i < $buttons.length; i++) {
+        $buttons[i].onclick = onButtonEvent;
+        $buttons[i].onmouseover = onButtonEvent;
+        $buttons[i].onmouseout = onButtonEvent;
+        $buttons[i].onmousedown = onButtonEvent;
+      }
+
+      // Closing modal by close button
+      getCloseButton().onclick = function () {
+        sweetAlert.closeModal(params.onClose);
+        reject('close');
+      };
+
+      // Closing modal by overlay click
+      sweetContainer.onclick = function (e) {
+        if (e.target !== sweetContainer) {
+          return;
+        }
+        if (params.allowOutsideClick) {
+          sweetAlert.closeModal(params.onClose);
+          reject('overlay');
+        }
+      };
+
+      var $confirmButton = getConfirmButton();
+      var $cancelButton = getCancelButton();
+
+      // Reverse buttons if neede d
+      if (params.reverseButtons) {
+        $confirmButton.parentNode.insertBefore($cancelButton, $confirmButton);
+      } else {
+        $confirmButton.parentNode.insertBefore($confirmButton, $cancelButton);
+      }
+
+      // Focus handling
+      function setFocus(index, increment) {
+        var focusableElements = getFocusableElements(params.focusCancel);
+        // search for visible elements and select the next possible match
+        for (var i = 0; i < focusableElements.length; i++) {
+          index = index + increment;
+
+          // rollover to first item
+          if (index === focusableElements.length) {
+            index = 0;
+
+            // go to last item
+          } else if (index === -1) {
+            index = focusableElements.length - 1;
+          }
+
+          // determine if element is visible
+          var el = focusableElements[index];
+          if (isVisible(el)) {
+            return el.focus();
+          }
+        }
+      }
+
+      function handleKeyDown(event) {
+        var e = event || window.event;
+        var keyCode = e.keyCode || e.which;
+
+        if ([9, 13, 32, 27].indexOf(keyCode) === -1) {
+          // Don't do work on keys we don't care about.
+          return;
+        }
+
+        var $targetElement = e.target || e.srcElement;
+
+        var focusableElements = getFocusableElements(params.focusCancel);
+        var btnIndex = -1; // Find the button - note, this is a nodelist, not an array.
+        for (var i = 0; i < focusableElements.length; i++) {
+          if ($targetElement === focusableElements[i]) {
+            btnIndex = i;
+            break;
+          }
+        }
+
+        // TAB
+        if (keyCode === 9) {
+          if (!e.shiftKey) {
+            // Cycle to the next button
+            setFocus(btnIndex, 1);
+          } else {
+            // Cycle to the prev button
+            setFocus(btnIndex, -1);
+          }
+
+          stopEventPropagation(e);
+        } else {
+          if (keyCode === 13 || keyCode === 32) {
+            if (btnIndex === -1) {
+              // ENTER/SPACE clicked outside of a button.
+              if (params.focusCancel) {
+                fireClick($cancelButton, e);
+              } else {
+                fireClick($confirmButton, e);
+              }
+            }
+          } else if (keyCode === 27 && params.allowEscapeKey === true) {
+            sweetAlert.closeModal(params.onClose);
+            reject('esc');
+          }
+        }
+      }
+
+      states.previousWindowKeyDown = window.onkeydown;
+      window.onkeydown = handleKeyDown;
+
+      // Loading state
+      if (params.buttonsStyling) {
+        $confirmButton.style.borderLeftColor = params.confirmButtonColor;
+        $confirmButton.style.borderRightColor = params.confirmButtonColor;
+      }
+
+      /**
+       * Show spinner instead of Confirm button and disable Cancel button
+       */
+      sweetAlert.showLoading = sweetAlert.enableLoading = function () {
+        show(getSpacer());
+        show($confirmButton, 'inline-block');
+        addClass($confirmButton, swalClasses.loading);
+        addClass(modal, swalClasses.loading);
+        $confirmButton.disabled = true;
+        $cancelButton.disabled = true;
+      };
+
+      /**
+       * Show spinner instead of Confirm button and disable Cancel button
+       */
+      sweetAlert.hideLoading = sweetAlert.disableLoading = function () {
+        if (!params.showConfirmButton) {
+          hide($confirmButton);
+          if (!params.showCancelButton) {
+            hide(getSpacer());
+          }
+        }
+        removeClass($confirmButton, swalClasses.loading);
+        removeClass(modal, swalClasses.loading);
+        $confirmButton.disabled = false;
+        $cancelButton.disabled = false;
+      };
+
+      sweetAlert.enableButtons = function () {
+        $confirmButton.disabled = false;
+        $cancelButton.disabled = false;
+      };
+
+      sweetAlert.disableButtons = function () {
+        $confirmButton.disabled = true;
+        $cancelButton.disabled = true;
+      };
+
+      sweetAlert.enableConfirmButton = function () {
+        $confirmButton.disabled = false;
+      };
+
+      sweetAlert.disableConfirmButton = function () {
+        $confirmButton.disabled = true;
+      };
+
+      sweetAlert.enableInput = function () {
+        var input = getInput();
+        if (!input) {
+          return false;
+        }
+        if (input.type === 'radio') {
+          var radiosContainer = input.parentNode.parentNode;
+          var radios = radiosContainer.querySelectorAll('input');
+          for (var i = 0; i < radios.length; i++) {
+            radios[i].disabled = false;
+          }
+        } else {
+          input.disabled = false;
+        }
+      };
+
+      sweetAlert.disableInput = function () {
+        var input = getInput();
+        if (!input) {
+          return false;
+        }
+        if (input && input.type === 'radio') {
+          var radiosContainer = input.parentNode.parentNode;
+          var radios = radiosContainer.querySelectorAll('input');
+          for (var i = 0; i < radios.length; i++) {
+            radios[i].disabled = true;
+          }
+        } else {
+          input.disabled = true;
+        }
+      };
+
+      // Set modal min-height to disable scrolling inside the modal
+      sweetAlert.recalculateHeight = debounce(function () {
+        var modal = getModal();
+        var prevState = modal.style.display;
+        modal.style.minHeight = '';
+        show(modal);
+        modal.style.minHeight = modal.scrollHeight + 1 + 'px';
+        modal.style.display = prevState;
+      }, 50);
+
+      // Show block with validation error
+      sweetAlert.showValidationError = function (error) {
+        var validationError = getValidationError();
+        validationError.innerHTML = error;
+        show(validationError);
+
+        var input = getInput();
+        focusInput(input);
+        addClass(input, swalClasses.inputerror);
+      };
+
+      // Hide block with validation error
+      sweetAlert.resetValidationError = function () {
+        var validationError = getValidationError();
+        hide(validationError);
+        sweetAlert.recalculateHeight();
+
+        var input = getInput();
+        if (input) {
+          removeClass(input, swalClasses.inputerror);
+        }
+      };
+
+      sweetAlert.getProgressSteps = function () {
+        return params.progressSteps;
+      };
+
+      sweetAlert.setProgressSteps = function (progressSteps) {
+        params.progressSteps = progressSteps;
+        setParameters(params);
+      };
+
+      sweetAlert.showProgressSteps = function () {
+        show(getProgressSteps());
+      };
+
+      sweetAlert.hideProgressSteps = function () {
+        hide(getProgressSteps());
+      };
+
+      sweetAlert.enableButtons();
+      sweetAlert.hideLoading();
+      sweetAlert.resetValidationError();
+
+      // inputs
+      var inputTypes = ['input', 'file', 'range', 'select', 'radio', 'checkbox', 'textarea'];
+      var input;
+      for (i = 0; i < inputTypes.length; i++) {
+        var inputClass = swalClasses[inputTypes[i]];
+        var inputContainer = getChildByClass(modal, inputClass);
+        input = getInput(inputTypes[i]);
+
+        // set attributes
+        if (input) {
+          for (var j in input.attributes) {
+            if (input.attributes.hasOwnProperty(j)) {
+              var attrName = input.attributes[j].name;
+              if (attrName !== 'type' && attrName !== 'value') {
+                input.removeAttribute(attrName);
+              }
+            }
+          }
+          for (var attr in params.inputAttributes) {
+            input.setAttribute(attr, params.inputAttributes[attr]);
+          }
+        }
+
+        // set class
+        inputContainer.className = inputClass;
+        if (params.inputClass) {
+          addClass(inputContainer, params.inputClass);
+        }
+
+        hide(inputContainer);
+      }
+
+      var populateInputOptions;
+      switch (params.input) {
+        case 'text':
+        case 'email':
+        case 'password':
+        case 'number':
+        case 'tel':
+          input = getChildByClass(modal, swalClasses.input);
+          input.value = params.inputValue;
+          input.placeholder = params.inputPlaceholder;
+          input.type = params.input;
+          show(input);
+          break;
+        case 'file':
+          input = getChildByClass(modal, swalClasses.file);
+          input.placeholder = params.inputPlaceholder;
+          input.type = params.input;
+          show(input);
+          break;
+        case 'range':
+          var range = getChildByClass(modal, swalClasses.range);
+          var rangeInput = range.querySelector('input');
+          var rangeOutput = range.querySelector('output');
+          rangeInput.value = params.inputValue;
+          rangeInput.type = params.input;
+          rangeOutput.value = params.inputValue;
+          show(range);
+          break;
+        case 'select':
+          var select = getChildByClass(modal, swalClasses.select);
+          select.innerHTML = '';
+          if (params.inputPlaceholder) {
+            var placeholder = document.createElement('option');
+            placeholder.innerHTML = params.inputPlaceholder;
+            placeholder.value = '';
+            placeholder.disabled = true;
+            placeholder.selected = true;
+            select.appendChild(placeholder);
+          }
+          populateInputOptions = function populateInputOptions(inputOptions) {
+            for (var optionValue in inputOptions) {
+              var option = document.createElement('option');
+              option.value = optionValue;
+              option.innerHTML = inputOptions[optionValue];
+              if (params.inputValue === optionValue) {
+                option.selected = true;
+              }
+              select.appendChild(option);
+            }
+            show(select);
+            select.focus();
+          };
+          break;
+        case 'radio':
+          var radio = getChildByClass(modal, swalClasses.radio);
+          radio.innerHTML = '';
+          populateInputOptions = function populateInputOptions(inputOptions) {
+            for (var radioValue in inputOptions) {
+              var id = 1;
+              var radioInput = document.createElement('input');
+              var radioLabel = document.createElement('label');
+              var radioLabelSpan = document.createElement('span');
+              radioInput.type = 'radio';
+              radioInput.name = swalClasses.radio;
+              radioInput.value = radioValue;
+              radioInput.id = swalClasses.radio + '-' + id++;
+              if (params.inputValue === radioValue) {
+                radioInput.checked = true;
+              }
+              radioLabelSpan.innerHTML = inputOptions[radioValue];
+              radioLabel.appendChild(radioInput);
+              radioLabel.appendChild(radioLabelSpan);
+              radioLabel.for = radioInput.id;
+              radio.appendChild(radioLabel);
+            }
+            show(radio);
+            var radios = radio.querySelectorAll('input');
+            if (radios.length) {
+              radios[0].focus();
+            }
+          };
+          break;
+        case 'checkbox':
+          var checkbox = getChildByClass(modal, swalClasses.checkbox);
+          var checkboxInput = getInput('checkbox');
+          checkboxInput.type = 'checkbox';
+          checkboxInput.value = 1;
+          checkboxInput.id = swalClasses.checkbox;
+          checkboxInput.checked = Boolean(params.inputValue);
+          var label = checkbox.getElementsByTagName('span');
+          if (label.length) {
+            checkbox.removeChild(label[0]);
+          }
+          label = document.createElement('span');
+          label.innerHTML = params.inputPlaceholder;
+          checkbox.appendChild(label);
+          show(checkbox);
+          break;
+        case 'textarea':
+          var textarea = getChildByClass(modal, swalClasses.textarea);
+          textarea.value = params.inputValue;
+          textarea.placeholder = params.inputPlaceholder;
+          show(textarea);
+          break;
+        case null:
+          break;
+        default:
+          console.error('SweetAlert2: Unexpected type of input! Expected "text" or "email" or "password", "select", "checkbox", "textarea" or "file", got "' + params.input + '"');
+          break;
+      }
+
+      if (params.input === 'select' || params.input === 'radio') {
+        if (params.inputOptions instanceof Promise) {
+          sweetAlert.showLoading();
+          params.inputOptions.then(function (inputOptions) {
+            sweetAlert.hideLoading();
+            populateInputOptions(inputOptions);
+          });
+        } else if (_typeof(params.inputOptions) === 'object') {
+          populateInputOptions(params.inputOptions);
+        } else {
+          console.error('SweetAlert2: Unexpected type of inputOptions! Expected object or Promise, got ' + _typeof(params.inputOptions));
+        }
+      }
+
+      openModal(params.animation, params.onOpen);
+
+      // Focus the first element (input or button)
+      setFocus(-1, 1);
+
+      // fix scroll
+      sweetContainer.scrollTop = 0;
+
+      // Observe changes inside the modal and adjust height
+      if (typeof MutationObserver !== 'undefined' && !swal2Observer) {
+        swal2Observer = new MutationObserver(sweetAlert.recalculateHeight);
+        swal2Observer.observe(modal, { childList: true, characterData: true, subtree: true });
+      }
+    });
+  }
+
+  // SweetAlert function
+  function sweetAlert() {
+    // Copy arguments to the local args variable
+    var args = arguments;
+
+    if (sweetAlert.isVisible()) {
+      sweetAlert.close();
+    }
+
+    return modalDependant.apply(this, args);
+  }
+
+  /*
+   * Global function to determine if swal2 modal is visible
+   */
+  sweetAlert.isVisible = function () {
+    var modal = getModal();
+    return isVisible(modal);
+  };
+
+  /*
+   * Global function for chaining sweetAlert modals
+   */
+  sweetAlert.queue = function (steps) {
+    queue = steps;
+    var modal = getModal();
+    var resetQueue = function resetQueue() {
+      queue = [];
+      modal.removeAttribute('data-queue-step');
+    };
+    return new Promise(function (resolve, reject) {
+      (function step(i, callback) {
+        if (i < queue.length) {
+          modal.setAttribute('data-queue-step', i);
+
+          sweetAlert(queue[i]).then(function () {
+            step(i + 1, callback);
+          }, function (dismiss) {
+            resetQueue();
+            reject(dismiss);
+          });
+        } else {
+          resetQueue();
+          resolve();
+        }
+      })(0);
+    });
+  };
+
+  /*
+   * Global function for getting the index of current modal in queue
+   */
+  sweetAlert.getQueueStep = function () {
+    return getModal().getAttribute('data-queue-step');
+  };
+
+  /*
+   * Global function for inserting a modal to the queue
+   */
+  sweetAlert.insertQueueStep = function (step, index) {
+    if (index && index < queue.length) {
+      return queue.splice(index, 0, step);
+    }
+    return queue.push(step);
+  };
+
+  /*
+   * Global function for deleting a modal from the queue
+   */
+  sweetAlert.deleteQueueStep = function (index) {
+    if (typeof queue[index] !== 'undefined') {
+      queue.splice(index, 1);
+    }
+  };
+
+  /*
+   * Global function to close sweetAlert
+   */
+  sweetAlert.close = sweetAlert.closeModal = function (onComplete) {
+    var modal = getModal();
+    removeClass(modal, swalClasses.show);
+    addClass(modal, swalClasses.hide);
+
+    // Reset icon animations
+    var $successIcon = modal.querySelector('.' + swalClasses.icon + '.' + iconTypes.success);
+    removeClass($successIcon, 'animate');
+    removeClass($successIcon.querySelector('.tip'), 'animate-success-tip');
+    removeClass($successIcon.querySelector('.long'), 'animate-success-long');
+
+    var $errorIcon = modal.querySelector('.' + swalClasses.icon + '.' + iconTypes.error);
+    removeClass($errorIcon, 'animate-error-icon');
+    removeClass($errorIcon.querySelector('.x-mark'), 'animate-x-mark');
+
+    var $warningIcon = modal.querySelector('.' + swalClasses.icon + '.' + iconTypes.warning);
+    removeClass($warningIcon, 'pulse-warning');
+
+    resetPrevState();
+
+    var hideModalAndResetState = function hideModalAndResetState() {
+      hide(modal);
+      modal.style.minHeight = '';
+      removeClass(sweetContainer, swalClasses.in);
+      removeClass(document.body, swalClasses.in);
+      undoScrollbar();
+      undoIOSfix();
+    };
+
+    // If animation is supported, animate
+    if (animationEndEvent && !hasClass(modal, swalClasses.noanimation)) {
+      modal.addEventListener(animationEndEvent, function swalCloseEventFinished() {
+        modal.removeEventListener(animationEndEvent, swalCloseEventFinished);
+        if (hasClass(modal, swalClasses.hide)) {
+          hideModalAndResetState();
+        }
+      });
+    } else {
+      // Otherwise, hide immediately
+      hideModalAndResetState();
+    }
+    if (onComplete !== null && typeof onComplete === 'function') {
+      onComplete.call(this, modal);
+    }
+  };
+
+  /*
+   * Global function to click 'Confirm' button
+   */
+  sweetAlert.clickConfirm = function () {
+    getConfirmButton().click();
+  };
+
+  /*
+   * Global function to click 'Cancel' button
+   */
+  sweetAlert.clickCancel = function () {
+    getCancelButton().click();
+  };
+
+  /**
+   * Set default params for each popup
+   * @param {Object} userParams
+   */
+  sweetAlert.setDefaults = function (userParams) {
+    if (!userParams) {
+      throw new Error('userParams is required');
+    }
+    if ((typeof userParams === 'undefined' ? 'undefined' : _typeof(userParams)) !== 'object') {
+      throw new Error('userParams has to be a object');
+    }
+
+    extend(modalParams, userParams);
+  };
+
+  /**
+   * Reset default params for each popup
+   */
+  sweetAlert.resetDefaults = function () {
+    modalParams = extend({}, defaultParams);
+  };
+
+  sweetAlert.noop = function () {};
+
+  sweetAlert.version = '5.3.5';
+
+  if (typeof Promise === 'function') {
+    Promise.prototype.done = Promise.prototype.done || function () {
+      // eslint-disable-line
+      return this.catch(function () {
+        // Catch promise rejections silently.
+        // https://github.com/limonte/sweetalert2/issues/177
+      });
+    };
+  } else {
+    console.warn('SweetAlert2: Please inlude Promise polyfill BEFORE including sweetalert2.js if IE10+ support needed.');
+  }
+
+  return sweetAlert;
+});
+if (window.Sweetalert2) window.sweetAlert = window.swal = window.Sweetalert2;
+
+/***/ }),
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17793,10 +19448,10 @@ setTimeout(function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(4), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6), __webpack_require__(7)))
 
 /***/ }),
-/* 4 */
+/* 6 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -17986,7 +19641,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 5 */
+/* 7 */
 /***/ (function(module, exports) {
 
 var g;
@@ -18013,22 +19668,26 @@ module.exports = g;
 
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0db65210_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0db65210_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(16);
 var disposed = false
-var normalizeComponent = __webpack_require__(7)
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(9)
+}
+var normalizeComponent = __webpack_require__(14)
 /* script */
 
 /* template */
 
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -18064,7 +19723,383 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 7 */
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(10);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(12)("6a89016d", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0db65210\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-0db65210\",\"scoped\":false,\"hasInlineConfig\":false}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(11)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.link-bar {\n    width: 5px;\n    height: 50px;\n    background-color: rgba(110, 158, 255, 0.11);\n    padding: 0px;\n    margin: auto;\n}\n.card-custom {\n    overflow: hidden;\n}\n.card-custom.blue {\n    background: #6387dd url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.red {\n    background: #D44269 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.dark {\n    background: #556D84 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.tail {\n    background: #02B7CA url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom-title {\n    font-weight: 900;\n    font-size: 5em;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function(useSourceMap) {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		return this.map(function (item) {
+			var content = cssWithMappingToString(item, useSourceMap);
+			if(item[2]) {
+				return "@media " + item[2] + "{" + content + "}";
+			} else {
+				return content;
+			}
+		}).join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+function cssWithMappingToString(item, useSourceMap) {
+	var content = item[1] || '';
+	var cssMapping = item[3];
+	if (!cssMapping) {
+		return content;
+	}
+
+	if (useSourceMap && typeof btoa === 'function') {
+		var sourceMapping = toComment(cssMapping);
+		var sourceURLs = cssMapping.sources.map(function (source) {
+			return '/*# sourceURL=' + cssMapping.sourceRoot + source + ' */'
+		});
+
+		return [content].concat(sourceURLs).concat([sourceMapping]).join('\n');
+	}
+
+	return [content].join('\n');
+}
+
+// Adapted from convert-source-map (MIT)
+function toComment(sourceMap) {
+	// eslint-disable-next-line no-undef
+	var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));
+	var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
+
+	return '/*# ' + data + ' */';
+}
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+  Modified by Evan You @yyx990803
+*/
+
+var hasDocument = typeof document !== 'undefined'
+
+if (typeof DEBUG !== 'undefined' && DEBUG) {
+  if (!hasDocument) {
+    throw new Error(
+    'vue-style-loader cannot be used in a non-browser environment. ' +
+    "Use { target: 'node' } in your Webpack config to indicate a server-rendering environment."
+  ) }
+}
+
+var listToStyles = __webpack_require__(13)
+
+/*
+type StyleObject = {
+  id: number;
+  parts: Array<StyleObjectPart>
+}
+
+type StyleObjectPart = {
+  css: string;
+  media: string;
+  sourceMap: ?string
+}
+*/
+
+var stylesInDom = {/*
+  [id: number]: {
+    id: number,
+    refs: number,
+    parts: Array<(obj?: StyleObjectPart) => void>
+  }
+*/}
+
+var head = hasDocument && (document.head || document.getElementsByTagName('head')[0])
+var singletonElement = null
+var singletonCounter = 0
+var isProduction = false
+var noop = function () {}
+
+// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+// tags it will allow on a page
+var isOldIE = typeof navigator !== 'undefined' && /msie [6-9]\b/.test(navigator.userAgent.toLowerCase())
+
+module.exports = function (parentId, list, _isProduction) {
+  isProduction = _isProduction
+
+  var styles = listToStyles(parentId, list)
+  addStylesToDom(styles)
+
+  return function update (newList) {
+    var mayRemove = []
+    for (var i = 0; i < styles.length; i++) {
+      var item = styles[i]
+      var domStyle = stylesInDom[item.id]
+      domStyle.refs--
+      mayRemove.push(domStyle)
+    }
+    if (newList) {
+      styles = listToStyles(parentId, newList)
+      addStylesToDom(styles)
+    } else {
+      styles = []
+    }
+    for (var i = 0; i < mayRemove.length; i++) {
+      var domStyle = mayRemove[i]
+      if (domStyle.refs === 0) {
+        for (var j = 0; j < domStyle.parts.length; j++) {
+          domStyle.parts[j]()
+        }
+        delete stylesInDom[domStyle.id]
+      }
+    }
+  }
+}
+
+function addStylesToDom (styles /* Array<StyleObject> */) {
+  for (var i = 0; i < styles.length; i++) {
+    var item = styles[i]
+    var domStyle = stylesInDom[item.id]
+    if (domStyle) {
+      domStyle.refs++
+      for (var j = 0; j < domStyle.parts.length; j++) {
+        domStyle.parts[j](item.parts[j])
+      }
+      for (; j < item.parts.length; j++) {
+        domStyle.parts.push(addStyle(item.parts[j]))
+      }
+      if (domStyle.parts.length > item.parts.length) {
+        domStyle.parts.length = item.parts.length
+      }
+    } else {
+      var parts = []
+      for (var j = 0; j < item.parts.length; j++) {
+        parts.push(addStyle(item.parts[j]))
+      }
+      stylesInDom[item.id] = { id: item.id, refs: 1, parts: parts }
+    }
+  }
+}
+
+function createStyleElement () {
+  var styleElement = document.createElement('style')
+  styleElement.type = 'text/css'
+  head.appendChild(styleElement)
+  return styleElement
+}
+
+function addStyle (obj /* StyleObjectPart */) {
+  var update, remove
+  var styleElement = document.querySelector('style[data-vue-ssr-id~="' + obj.id + '"]')
+
+  if (styleElement) {
+    if (isProduction) {
+      // has SSR styles and in production mode.
+      // simply do nothing.
+      return noop
+    } else {
+      // has SSR styles but in dev mode.
+      // for some reason Chrome can't handle source map in server-rendered
+      // style tags - source maps in <style> only works if the style tag is
+      // created and inserted dynamically. So we remove the server rendered
+      // styles and inject new ones.
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  if (isOldIE) {
+    // use singleton mode for IE9.
+    var styleIndex = singletonCounter++
+    styleElement = singletonElement || (singletonElement = createStyleElement())
+    update = applyToSingletonTag.bind(null, styleElement, styleIndex, false)
+    remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true)
+  } else {
+    // use multi-style-tag mode in all other cases
+    styleElement = createStyleElement()
+    update = applyToTag.bind(null, styleElement)
+    remove = function () {
+      styleElement.parentNode.removeChild(styleElement)
+    }
+  }
+
+  update(obj)
+
+  return function updateStyle (newObj /* StyleObjectPart */) {
+    if (newObj) {
+      if (newObj.css === obj.css &&
+          newObj.media === obj.media &&
+          newObj.sourceMap === obj.sourceMap) {
+        return
+      }
+      update(obj = newObj)
+    } else {
+      remove()
+    }
+  }
+}
+
+var replaceText = (function () {
+  var textStore = []
+
+  return function (index, replacement) {
+    textStore[index] = replacement
+    return textStore.filter(Boolean).join('\n')
+  }
+})()
+
+function applyToSingletonTag (styleElement, index, remove, obj) {
+  var css = remove ? '' : obj.css
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = replaceText(index, css)
+  } else {
+    var cssNode = document.createTextNode(css)
+    var childNodes = styleElement.childNodes
+    if (childNodes[index]) styleElement.removeChild(childNodes[index])
+    if (childNodes.length) {
+      styleElement.insertBefore(cssNode, childNodes[index])
+    } else {
+      styleElement.appendChild(cssNode)
+    }
+  }
+}
+
+function applyToTag (styleElement, obj) {
+  var css = obj.css
+  var media = obj.media
+  var sourceMap = obj.sourceMap
+
+  if (media) {
+    styleElement.setAttribute('media', media)
+  }
+
+  if (sourceMap) {
+    // https://developer.chrome.com/devtools/docs/javascript-debugging
+    // this makes source maps inside style tags work properly in Chrome
+    css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */'
+    // http://stackoverflow.com/a/26603875
+    css += '\n/*# sourceMappingURL=data:application/json;base64,' + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + ' */'
+  }
+
+  if (styleElement.styleSheet) {
+    styleElement.styleSheet.cssText = css
+  } else {
+    while (styleElement.firstChild) {
+      styleElement.removeChild(styleElement.firstChild)
+    }
+    styleElement.appendChild(document.createTextNode(css))
+  }
+}
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+/**
+ * Translates the list format produced by css-loader into something
+ * easier to manipulate.
+ */
+module.exports = function listToStyles (parentId, list) {
+  var styles = []
+  var newStyles = {}
+  for (var i = 0; i < list.length; i++) {
+    var item = list[i]
+    var id = item[0]
+    var css = item[1]
+    var media = item[2]
+    var sourceMap = item[3]
+    var part = {
+      id: parentId + ':' + i,
+      css: css,
+      media: media,
+      sourceMap: sourceMap
+    }
+    if (!newStyles[id]) {
+      styles.push(newStyles[id] = { id: id, parts: [part] })
+    } else {
+      newStyles[id].parts.push(part)
+    }
+  }
+  return styles
+}
+
+
+/***/ }),
+/* 14 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -18161,7 +20196,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 8 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18185,31 +20220,178 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-    mounted: function mounted() {
-        $(document).ready(function () {
-            $('#fullpage').fullpage();
-        });
+    data: function data() {
+        return {
+            sections: [{
+                color: "blue",
+                title: "Day 1",
+                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+            }, {
+                color: "red",
+                title: "Day 2",
+                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+            }, {
+                color: "green",
+                title: "Day 3",
+                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+            }, {
+                color: "tail",
+                title: "Day 4",
+                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+            }, {
+                color: "dark",
+                title: "Day 5",
+                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+            }]
+        };
     }
 };
 
 /***/ }),
-/* 9 */
+/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
+  return _c('div', [_vm._m(0), _vm._v(" "), _c('h1', {
+    staticClass: "text-center margin-bottom-50 padding-50"
+  }, [_vm._v("Machine Vision Workshop Material")]), _vm._v(" "), _c('div', {
+    staticClass: "container margin-bottom-50"
+  }, _vm._l((_vm.sections), function(section, index) {
+    return _c('div', [_c('div', {
+      staticClass: "card card-custom"
+    }, [_c('div', {
+      staticClass: "center-content card-custom",
+      class: section.color
+    }, [_c('h1', {
+      staticClass: "txt-white-color card-custom-title"
+    }, [_c('b', [_vm._v(_vm._s(index + 1))])])]), _vm._v(" "), _c('div', {
+      staticClass: "padding-50"
+    }, [_c('h1', [_vm._v(_vm._s(section.title))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(section.description))]), _vm._v(" "), _c('button', {
+      staticClass: "btn btn-compact bg-gradient btn-sm no-shadow",
+      class: section.color
+    }, [_vm._v("Enter")])])]), _vm._v(" "), (_vm.sections.length - 1 != index) ? _c('div', {
+      staticClass: "link-bar"
+    }) : _vm._e()])
+  })), _vm._v(" "), _vm._m(1)])
 }
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "full-height flex-stretch"
+  return _c('nav', {
+    staticClass: "navbar no-borders"
   }, [_c('div', {
-    staticClass: "col-md-6 bg-blue-gradient"
-  }, [_c('h1', [_vm._v("Hello Friend")])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_vm._v("sdjbg")])])
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "navbar-header"
+  }, [_c('button', {
+    staticClass: "navbar-toggle",
+    attrs: {
+      "type": "button",
+      "data-toggle": "collapse",
+      "data-target": "#navigation-example"
+    }
+  }, [_c('span', {
+    staticClass: "sr-only"
+  }, [_vm._v("Toggle navigation")]), _vm._v(" "), _c('span', {
+    staticClass: "icon-bar"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "icon-bar"
+  }), _vm._v(" "), _c('span', {
+    staticClass: "icon-bar"
+  })]), _vm._v(" "), _c('a', {
+    staticClass: "navbar-brand",
+    attrs: {
+      "href": "#"
+    }
+  }, [_c('span', [_c('img', {
+    attrs: {
+      "height": "100%",
+      "src": "/public/images/logo.png",
+      "alt": ""
+    }
+  })]), _vm._v("Binary Torch")])]), _vm._v(" "), _c('div', {
+    staticClass: "collapse navbar-collapse",
+    attrs: {
+      "id": "navigation-example"
+    }
+  }, [_c('ul', {
+    staticClass: "nav navbar-nav navbar-right"
+  }, [_c('li', [_c('a', {
+    staticClass: "btn btn-simple",
+    attrs: {
+      "href": "#"
+    }
+  }, [_vm._v("\n                            Home\n                        ")])])])])])])
+},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('footer', {
+    staticClass: "footer"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('nav', {
+    staticClass: "pull-left"
+  }, [_c('ul', [_c('li', [_c('a', {
+    attrs: {
+      "href": "http://www.binary-torch.com"
+    }
+  }, [_vm._v("\n                            Binary Torch\n                        ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "copyright pull-right"
+  }, [_vm._v("\n                © 2017, made with "), _c('i', {
+    staticClass: "fa fa-heart heart"
+  }), _vm._v(" in Malaysia\n            ")])])])
 }]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
@@ -18222,10 +20404,10 @@ if (false) {
 }
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports) {
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/*!
+/* WEBPACK VAR INJECTION */(function(jQuery) {/*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
  * Licensed under the MIT license
@@ -20603,9 +22785,10 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 11 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -23737,7 +25920,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 12 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;//
@@ -24492,7 +26675,7 @@ else
 
 
 /***/ }),
-/* 13 */
+/* 20 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
