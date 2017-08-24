@@ -1,6 +1,6 @@
 # Binary Torch Sdn. Bhd.
 
-## Machine Vision (Image Processing) Workshop
+## Machine Vision (Image Processing) -using OpenCV with Python- workshop
 
 ![preview](https://raw.githubusercontent.com/binary-torch/machine-vision-workshop/master/public/images/show.png)
 
