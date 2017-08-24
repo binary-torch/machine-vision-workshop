@@ -4,3 +4,6 @@ node_modules
 .DS_Store
 ./src
 src
+.babelrc
+package.json
+webpack.config.js
