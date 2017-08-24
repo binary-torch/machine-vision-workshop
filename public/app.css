@@ -1,3 +1,52 @@
+
+#mainContent {
+    background: url("./images/backgroun-pattern.svg") no-repeat;
+    background-size: cover;
+}
+.navbar-header {
+    float: left !important;
+}
+.navbar-nav {
+    float: right !important;
+}
+.link-bar {
+    width: 5px;
+    height: 50px;
+    background-color: rgba(110, 158, 255, 0.11);
+    padding: 0px;
+    margin: auto;
+}
+.card-custom {
+    overflow: hidden;
+}
+.card-custom.blue {
+    background: #6387dd url("./images/card-bg.svg") no-repeat;
+    background-size: cover;
+}
+.card-custom.red {
+    background: #D44269 url("./images/card-bg.svg") no-repeat;
+    background-size: cover;
+}
+.card-custom.green {
+    background: #4DAB52 url("./images/card-bg.svg") no-repeat;
+    background-size: cover;
+}
+.card-custom.dark {
+    background: #556D84 url("./images/card-bg.svg") no-repeat;
+    background-size: cover;
+}
+.card-custom.green {
+    background: #4DAB52 url("./images/card-bg.svg") no-repeat;
+    background-size: cover;
+}
+.card-custom.tail {
+    background: #02B7CA url("./images/card-bg.svg") no-repeat;
+    background-size: cover;
+}
+.card-custom-title {
+    font-weight: 900;
+    font-size: 5em;
+}
 /*!
  * fullPage 2.9.4
  * https://github.com/alvarotrigo/fullPage.js

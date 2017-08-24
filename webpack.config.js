@@ -21,7 +21,10 @@ module.exports = {
                 test: /\.s[ac]ss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ['css-loader', 'sass-loader']
+                    use: [{
+                        loader: 'css-loader'
+                        // options: { root: '/' }
+                    }, 'sass-loader']
                 })
             },
             {
@@ -31,10 +34,34 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        css: ExtractTextPlugin.extract({
+                            use: {
+                                loader: 'css-loader',
+                                options: {
+                                    url: false
+                                }
+                            },
+                            fallback: 'style-loader'
+                        })
+                    }
+                }
             },
             { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
-            { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
+            { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192
+                        }
+                    }
+                ]
+            }
         ]
     },
     plugins: [
@@ -43,5 +70,10 @@ module.exports = {
             $: "jquery",
             jQuery: "jquery"
         })
-    ]
+    ],
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js'
+        }
+    },
 };
