@@ -24050,10 +24050,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 exports.default = [{
-    path: '/main',
+    path: '/content',
     component: _Main2.default,
     name: 'main',
-    redirect: 'day1',
+    redirect: { name: 'day1' },
     children: [].concat(_toConsumableArray(_routes2.default), _toConsumableArray(_routes4.default), _toConsumableArray(_routes6.default), _toConsumableArray(_routes8.default), _toConsumableArray(_routes10.default))
 }];
 
@@ -24160,7 +24160,7 @@ Object.defineProperty(exports, "__esModule", {
 var _components = __webpack_require__(33);
 
 exports.default = [{
-    path: '/day1',
+    path: 'day1',
     component: _components.Day1,
     name: 'day1'
 }];
@@ -24294,7 +24294,7 @@ Object.defineProperty(exports, "__esModule", {
 var _components = __webpack_require__(38);
 
 exports.default = [{
-    path: '/day2',
+    path: 'day2',
     component: _components.Day2,
     name: 'day2'
 }];
@@ -24426,7 +24426,7 @@ Object.defineProperty(exports, "__esModule", {
 var _components = __webpack_require__(43);
 
 exports.default = [{
-    path: '/day3',
+    path: 'day3',
     component: _components.Day3,
     name: 'day3'
 }];
@@ -24558,7 +24558,7 @@ Object.defineProperty(exports, "__esModule", {
 var _components = __webpack_require__(48);
 
 exports.default = [{
-    path: '/day4',
+    path: 'day4',
     component: _components.Day4,
     name: 'day4'
 }];
@@ -24690,7 +24690,7 @@ Object.defineProperty(exports, "__esModule", {
 var _components = __webpack_require__(53);
 
 exports.default = [{
-    path: '/day5',
+    path: 'day5',
     component: _components.Day5,
     name: 'day5'
 }];
@@ -24918,6 +24918,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 exports.default = {};
 
@@ -24928,8 +24934,23 @@ exports.default = {};
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "container"
-  }, [_vm._v("\n    404\n")])
+    staticClass: "container text-center padding-top-150"
+  }, [_c('h1', {
+    staticClass: "no-margin",
+    staticStyle: {
+      "font-size": "4em"
+    }
+  }, [_vm._v("☠️")]), _vm._v(" "), _c('h2', {
+    staticClass: "margin-bottom-50"
+  }, [_vm._v("Page Not Found")]), _vm._v(" "), _c('router-link', {
+    staticClass: "btn btn-info",
+    attrs: {
+      "tag": "button",
+      "to": {
+        name: 'home'
+      }
+    }
+  }, [_vm._v("\n        Home Page\n    ")])], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
