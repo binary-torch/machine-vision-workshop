@@ -19757,7 +19757,7 @@ exports = module.exports = __webpack_require__(11)(undefined);
 
 
 // module
-exports.push([module.i, "\n.link-bar {\n    width: 5px;\n    height: 50px;\n    background-color: rgba(110, 158, 255, 0.11);\n    padding: 0px;\n    margin: auto;\n}\n.card-custom {\n    overflow: hidden;\n}\n.card-custom.blue {\n    background: #6387dd url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.red {\n    background: #D44269 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.dark {\n    background: #556D84 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.tail {\n    background: #02B7CA url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom-title {\n    font-weight: 900;\n    font-size: 5em;\n}\n", ""]);
+exports.push([module.i, "\n#mainContent {\n    background: url(\"/public/images/backgroun-pattern.svg\") no-repeat;\n    background-size: cover;\n}\n.link-bar {\n    width: 5px;\n    height: 50px;\n    background-color: rgba(110, 158, 255, 0.11);\n    padding: 0px;\n    margin: auto;\n}\n.card-custom {\n    overflow: hidden;\n}\n.card-custom.blue {\n    background: #6387dd url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.red {\n    background: #D44269 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.dark {\n    background: #556D84 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.tail {\n    background: #02B7CA url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom-title {\n    font-weight: 900;\n    font-size: 5em;\n}\n", ""]);
 
 // exports
 
@@ -20273,6 +20273,7 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
     data: function data() {
@@ -20280,7 +20281,7 @@ exports.default = {
             sections: [{
                 color: "blue",
                 title: "Day 1",
-                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+                description: "Introduction to image processing, Python libraries and Raspberry Pi GPIO."
             }, {
                 color: "red",
                 title: "Day 2",
@@ -20308,12 +20309,18 @@ exports.default = {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._m(0), _vm._v(" "), _c('h1', {
+  return _c('div', {
+    attrs: {
+      "id": "mainContent"
+    }
+  }, [_vm._m(0), _vm._v(" "), _c('h1', {
     staticClass: "text-center margin-bottom-50 padding-50"
   }, [_vm._v("Machine Vision Workshop Material")]), _vm._v(" "), _c('div', {
     staticClass: "container margin-bottom-50"
-  }, _vm._l((_vm.sections), function(section, index) {
-    return _c('div', [_c('div', {
+  }, [_vm._l((_vm.sections), function(section, index) {
+    return _c('div', {
+      staticClass: "col-md-8 col-md-offset-2"
+    }, [_c('div', {
       staticClass: "card card-custom"
     }, [_c('div', {
       staticClass: "center-content card-custom",
@@ -20328,7 +20335,9 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }, [_vm._v("Enter")])])]), _vm._v(" "), (_vm.sections.length - 1 != index) ? _c('div', {
       staticClass: "link-bar"
     }) : _vm._e()])
-  })), _vm._v(" "), _vm._m(1)])
+  }), _vm._v(" "), _c('div', {
+    staticClass: "clearfix"
+  })], 2), _vm._v(" "), _vm._m(1)])
 }
 var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('nav', {
