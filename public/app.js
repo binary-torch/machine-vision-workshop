@@ -23518,23 +23518,28 @@ exports.default = {
             sections: [{
                 color: "blue",
                 title: "Day 1",
-                description: "Introduction to image processing, Python libraries and Raspberry Pi GPIO."
+                description: "Introduction to image processing, Python libraries and Raspberry Pi GPIO.",
+                route: 'day1'
             }, {
                 color: "red",
                 title: "Day 2",
-                description: "In this section, you will learn how to deal with images and its basic operations including: masking, bitwise operation, splitting, merging and drawing."
+                description: "In this section, you will learn how to deal with images and its basic operations including: masking, bitwise operation, splitting, merging and drawing.",
+                route: 'day2'
             }, {
                 color: "green",
                 title: "Day 3",
-                description: "In this section, you will learn more advance topics including: morphology operations, smoothing & blurring, color spaces, thresholding, gradients, histograms and edge detection"
+                description: "In this section, you will learn more advance topics including: morphology operations, smoothing & blurring, color spaces, thresholding, gradients, histograms and edge detection",
+                route: 'day3'
             }, {
                 color: "tail",
                 title: "Day 4",
-                description: "In this section, you will learn how to find, extract contours from images in addition to that, you will start your first basic object detection project."
+                description: "In this section, you will learn how to find, extract contours from images in addition to that, you will start your first basic object detection project.",
+                route: 'day4'
             }, {
                 color: "dark",
                 title: "Day 5",
-                description: "In this section, you will learn the core concept of classification and how they work and by the end of this section you will build: Face & smile detection and Mini google image search."
+                description: "In this section, you will learn the core concept of classification and how they work and by the end of this section you will build: Face & smile detection and Mini google image search.",
+                route: 'day5'
             }]
         };
     },
@@ -23545,6 +23550,7 @@ exports.default = {
         card: _Card2.default
     }
 }; //
+//
 //
 //
 //
@@ -23917,9 +23923,11 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
 
 exports.default = {
-    props: ['color', 'title', 'subTitle', 'description']
+    props: ['color', 'title', 'subTitle', 'description', 'route']
 };
 
 /***/ }),
@@ -23937,10 +23945,16 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "txt-white-color card-custom-title"
   }, [_c('b', [_vm._v(_vm._s(_vm.title))])])]), _vm._v(" "), _c('div', {
     staticClass: "padding-50"
-  }, [_c('h1', [_vm._v(_vm._s(_vm.subTitle))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.description))]), _vm._v(" "), _c('button', {
+  }, [_c('h1', [_vm._v(_vm._s(_vm.subTitle))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.description))]), _vm._v(" "), _c('router-link', {
     staticClass: "btn btn-compact bg-gradient btn-sm no-shadow",
-    class: _vm.color
-  }, [_vm._v("\n            Enter\n        ")])])])
+    class: _vm.color,
+    attrs: {
+      "tag": "button",
+      "to": {
+        name: _vm.route
+      }
+    }
+  }, [_vm._v("\n                Enter\n        ")])], 1)])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -23975,7 +23989,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
         "color": section.color,
         "title": index + 1,
         "sub-title": section.title,
-        "description": section.description
+        "description": section.description,
+        "route": section.route
       }
     }), _vm._v(" "), (_vm.sections.length - 1 != index) ? _c('div', {
       staticClass: "link-bar"
