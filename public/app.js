@@ -10356,7 +10356,6 @@ window.$ = window.jQuery = __webpack_require__(0);
 __webpack_require__(17);
 __webpack_require__(18);
 __webpack_require__(19);
-// import './material-dashboard/material-dashboard'
 
 //vue
 
@@ -19757,7 +19756,7 @@ exports = module.exports = __webpack_require__(11)(undefined);
 
 
 // module
-exports.push([module.i, "\n#mainContent {\n    background: url(\"/public/images/backgroun-pattern.svg\") no-repeat;\n    background-size: cover;\n}\n.link-bar {\n    width: 5px;\n    height: 50px;\n    background-color: rgba(110, 158, 255, 0.11);\n    padding: 0px;\n    margin: auto;\n}\n.card-custom {\n    overflow: hidden;\n}\n.card-custom.blue {\n    background: #6387dd url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.red {\n    background: #D44269 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.dark {\n    background: #556D84 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.tail {\n    background: #02B7CA url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom-title {\n    font-weight: 900;\n    font-size: 5em;\n}\n", ""]);
+exports.push([module.i, "\n#mainContent {\n    background: url(\"/public/images/backgroun-pattern.svg\") no-repeat;\n    background-size: cover;\n}\n.navbar-header {\n    float: left;\n}\n.navbar-nav {\n    float: right;\n}\n.link-bar {\n    width: 5px;\n    height: 50px;\n    background-color: rgba(110, 158, 255, 0.11);\n    padding: 0px;\n    margin: auto;\n}\n.card-custom {\n    overflow: hidden;\n}\n.card-custom.blue {\n    background: #6387dd url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.red {\n    background: #D44269 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.dark {\n    background: #556D84 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.green {\n    background: #4DAB52 url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom.tail {\n    background: #02B7CA url(\"/public/images/card-bg.svg\") no-repeat;\n    background-size: cover;\n}\n.card-custom-title {\n    font-weight: 900;\n    font-size: 5em;\n}\n", ""]);
 
 // exports
 
@@ -20266,14 +20265,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 exports.default = {
     data: function data() {
@@ -20285,19 +20276,19 @@ exports.default = {
             }, {
                 color: "red",
                 title: "Day 2",
-                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+                description: "In this section, you will learn how to deal with images and its basic operations including: masking, bitwise operation, splitting, merging and drawing."
             }, {
                 color: "green",
                 title: "Day 3",
-                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+                description: "In this section, you will learn more advance topics including: morphology operations, smoothing & blurring, color spaces, thresholding, gradients, histograms and edge detection"
             }, {
                 color: "tail",
                 title: "Day 4",
-                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+                description: "In this section, you will learn how to find, extract contours from images in addition to that, you will start your first basic object detection project."
             }, {
                 color: "dark",
                 title: "Day 5",
-                description: "lipsusdljgn sdlkgnasm,fadjbsdfsdg aas .asd."
+                description: "In this section, you will learn the core concept of classification and how they work and by the end of this section you will build: Face & smile detection and Mini google image search."
             }]
         };
     }
@@ -20346,22 +20337,7 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
     staticClass: "container"
   }, [_c('div', {
     staticClass: "navbar-header"
-  }, [_c('button', {
-    staticClass: "navbar-toggle",
-    attrs: {
-      "type": "button",
-      "data-toggle": "collapse",
-      "data-target": "#navigation-example"
-    }
-  }, [_c('span', {
-    staticClass: "sr-only"
-  }, [_vm._v("Toggle navigation")]), _vm._v(" "), _c('span', {
-    staticClass: "icon-bar"
-  }), _vm._v(" "), _c('span', {
-    staticClass: "icon-bar"
-  }), _vm._v(" "), _c('span', {
-    staticClass: "icon-bar"
-  })]), _vm._v(" "), _c('a', {
+  }, [_c('a', {
     staticClass: "navbar-brand",
     attrs: {
       "href": "#"
@@ -20372,19 +20348,14 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
       "src": "/public/images/logo.png",
       "alt": ""
     }
-  })]), _vm._v("Binary Torch")])]), _vm._v(" "), _c('div', {
-    staticClass: "collapse navbar-collapse",
-    attrs: {
-      "id": "navigation-example"
-    }
-  }, [_c('ul', {
+  })]), _vm._v("Binary Torch")])]), _vm._v(" "), _c('ul', {
     staticClass: "nav navbar-nav navbar-right"
   }, [_c('li', [_c('a', {
     staticClass: "btn btn-simple",
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("\n                            Home\n                        ")])])])])])])
+  }, [_vm._v("\n                        Home\n                    ")])])])])])
 },function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('footer', {
     staticClass: "footer"
