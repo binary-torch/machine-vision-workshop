@@ -24681,6 +24681,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -25031,7 +25062,36 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "col-md-6 col-md-offset-3"
   }, [_c('pre', [_vm._v("                        "), _c('code', {
     staticClass: "python"
-  }, [_vm._v("\nimport numpy\nnumbersPy = [2, 4, 6] * 2\nnumbersNp = numpy.array([2, 4, 6])\nnumbersNp = numbersNp * 2\n\nprint \"numbersPy: \", numbersPy\n# numbersPy:  [2, 4, 6, 2, 4, 6]\nprint \"numbersNp: \", numbersNp\n# numbersNp:  [4  8 12]\n                        ")]), _vm._v("\n                    ")])])])])], 1)
+  }, [_vm._v("\nimport numpy\nnumbersPy = [2, 4, 6] * 2\nnumbersNp = numpy.array([2, 4, 6])\nnumbersNp = numbersNp * 2\n\nprint \"numbersPy: \", numbersPy\n# numbersPy:  [2, 4, 6, 2, 4, 6]\nprint \"numbersNp: \", numbersNp\n# numbersNp:  [4  8 12]\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Command Line Tools",
+      "sub-title": "Introduction & Shell"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("A shell is a program with a command-line interface which you talk to with a terminal.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-info",
+    attrs: {
+      "href": "https://www.liquidweb.com/kb/new-user-tutorial-basic-shell-commands/",
+      "target": "_blank"
+    }
+  }, [_vm._v("More Commands")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "shell"
+  }, [_vm._v("\nPwd\ncd\nls\nmkdir\nmv\ncp\ncp -r\nrm\nrm -r\nsudo\nsudo halt\nsudo reboot\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    staticStyle: {
+      "background": "url('/public/images/pages/day1/Pi/pi2.jpg') no-repeat",
+      "background-size": "cover"
+    },
+    attrs: {
+      "title": "Raspberry Pi"
+    }
+  }, [_c('div', {
+    slot: "body"
+  })])], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
