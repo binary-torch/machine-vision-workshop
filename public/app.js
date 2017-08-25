@@ -24748,6 +24748,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -25136,29 +25167,53 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   })]), _vm._v(" "), _c('slide', {
     attrs: {
       "title": "GPIO",
-      "sub-title": "Introduction & Setup"
+      "sub-title": "Introduction"
     }
   }, [_c('div', {
     slot: "body"
   }, [_c('div', {
-    staticClass: "col-md-6"
-  }, [_c('h2', [_vm._v("A shell is a program with a command-line interface which you talk to with a terminal.")]), _vm._v(" "), _c('a', {
-    staticClass: "btn btn-info",
+    staticClass: "container"
+  }, [_c('div', {
+    staticClass: "col-md-6 col-md-offset-3"
+  }, [_c('img', {
     attrs: {
-      "href": "https://www.liquidweb.com/kb/new-user-tutorial-basic-shell-commands/",
-      "target": "_blank"
+      "width": "100%",
+      "src": "/public/images/pages/day1/Pi/gpio.jpg"
     }
-  }, [_vm._v("More Commands")]), _vm._v(" "), _c('hr'), _vm._v("\n                    For running a python file: "), _c('br'), _vm._v(" "), _c('code', {
-    staticClass: "no-borders"
-  }, [_vm._v("workon cv")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('code', {
-    staticClass: "no-borders"
-  }, [_vm._v("python3 filename.py # run it using python 3X interpreter")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('code', {
-    staticClass: "no-borders"
-  }, [_vm._v("python2 filename.py # run it using python 2X interpreter")])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
+  })])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "GPIO",
+      "sub-title": "Setup"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6 col-md-offset-3"
   }, [_c('pre', [_vm._v("                        "), _c('code', {
     staticClass: "python"
-  }, [_vm._v("\npwd     # print current directory path\ncd      # change directory\nls      # list the directory files\nmkdir   # make a new directory\nmv      # move a file from one directory to another\ncp      # copy a file to another directory\ncp -r   # copy a directory to another destination\nrm      # remove a file\nrm -r   # remove a directory\nsudo    # super user do (use to force a command that requires permission)\nsudo halt # shutdown the system\nsudo reboot # reboot the system\n                        ")]), _vm._v("\n                    ")])])])])], 1)
+  }, [_vm._v("\nimport RPi.GPIO as GPIO\n\nGPIO.setmode(GPIO.BCM)      # pin no follows chip\n                            # or\nGPIO.setmode(GPIO.BOARD)    # pin no follow board\n\nGPIO.setwarnings(False)\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "GPIO",
+      "sub-title": "Digital Output"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6 col-md-offset-3"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport RPi.GPIO as GPIO\n\nGPIO.setup(4, GPIO.OUT)     # pin 4 is output now\n\nGPIO.output(4, GPIO.HIGH)   # pin 4 on\nGPIO.output(4, GPIO.LOW)    # pin 4 off\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "GPIO",
+      "sub-title": "Digital Input"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6 col-md-offset-3"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport RPi.GPIO as GPIO\n\nGPIO.setup(15, GPIO.IN, GPIO.PUD_UP)\n# pin 15 is input w pull-up\nGPIO.setup(16, GPIO.IN, GPIO.PUD_DOWN)\n# pin 15 is input w pull-down\n\nGPIO.input(15)\n# returns 0/1 or False/True or GPIO.LOW/GPIO.HIGH\nGPIO.cleanup()\n# GPIO cleanup upon exit\n                        ")]), _vm._v("\n                    ")])])])])], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
