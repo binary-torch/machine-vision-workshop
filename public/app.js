@@ -24712,6 +24712,43 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -25077,11 +25114,17 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "href": "https://www.liquidweb.com/kb/new-user-tutorial-basic-shell-commands/",
       "target": "_blank"
     }
-  }, [_vm._v("More Commands")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("More Commands")]), _vm._v(" "), _c('hr'), _vm._v("\n                    For running a python file: "), _c('br'), _vm._v(" "), _c('code', {
+    staticClass: "no-borders"
+  }, [_vm._v("workon cv")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('code', {
+    staticClass: "no-borders"
+  }, [_vm._v("python3 filename.py # run it using python 3X interpreter")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('code', {
+    staticClass: "no-borders"
+  }, [_vm._v("python2 filename.py # run it using python 2X interpreter")])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
   }, [_c('pre', [_vm._v("                        "), _c('code', {
-    staticClass: "shell"
-  }, [_vm._v("\nPwd\ncd\nls\nmkdir\nmv\ncp\ncp -r\nrm\nrm -r\nsudo\nsudo halt\nsudo reboot\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    staticClass: "python"
+  }, [_vm._v("\npwd     # print current directory path\ncd      # change directory\nls      # list the directory files\nmkdir   # make a new directory\nmv      # move a file from one directory to another\ncp      # copy a file to another directory\ncp -r   # copy a directory to another destination\nrm      # remove a file\nrm -r   # remove a directory\nsudo    # super user do (use to force a command that requires permission)\nsudo halt # shutdown the system\nsudo reboot # reboot the system\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
     staticStyle: {
       "background": "url('/public/images/pages/day1/Pi/pi2.jpg') no-repeat",
       "background-size": "cover"
@@ -25091,7 +25134,32 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_c('div', {
     slot: "body"
-  })])], 1)
+  })]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "GPIO",
+      "sub-title": "Introduction & Setup"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("A shell is a program with a command-line interface which you talk to with a terminal.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-info",
+    attrs: {
+      "href": "https://www.liquidweb.com/kb/new-user-tutorial-basic-shell-commands/",
+      "target": "_blank"
+    }
+  }, [_vm._v("More Commands")]), _vm._v(" "), _c('hr'), _vm._v("\n                    For running a python file: "), _c('br'), _vm._v(" "), _c('code', {
+    staticClass: "no-borders"
+  }, [_vm._v("workon cv")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('code', {
+    staticClass: "no-borders"
+  }, [_vm._v("python3 filename.py # run it using python 3X interpreter")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('code', {
+    staticClass: "no-borders"
+  }, [_vm._v("python2 filename.py # run it using python 2X interpreter")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\npwd     # print current directory path\ncd      # change directory\nls      # list the directory files\nmkdir   # make a new directory\nmv      # move a file from one directory to another\ncp      # copy a file to another directory\ncp -r   # copy a directory to another destination\nrm      # remove a file\nrm -r   # remove a directory\nsudo    # super user do (use to force a command that requires permission)\nsudo halt # shutdown the system\nsudo reboot # reboot the system\n                        ")]), _vm._v("\n                    ")])])])])], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
