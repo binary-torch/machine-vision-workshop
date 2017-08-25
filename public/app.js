@@ -24429,6 +24429,258 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -24461,6 +24713,7 @@ exports.default = {
     },
     mounted: function mounted() {
         $('#full-page').fullpage();
+        //            $.fn.fullpage.setAutoScrolling(false);
         $(document).ready(function () {
             $('pre code').each(function (i, block) {
                 hljs.highlightBlock(block);
@@ -24604,7 +24857,181 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "col-md-6"
   }, [_c('pre', [_vm._v("                        "), _c('code', {
     staticClass: "python"
-  }, [_vm._v("\nA = 3  # type is int\n\nA = “some string” # type is string\nA = 'another string' # type is string\n\nA = 4.4  # type is float\n                        ")]), _vm._v("\n                    ")])])])])], 1)
+  }, [_vm._v("\nA = 3  # type is int\n\nA = “some string” # type is string\nA = 'another string' # type is string\n\nA = 4.4  # type is float\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Python Basics",
+      "sub-title": "Arithmetic operations"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("Python is a dynamically typed language")]), _vm._v(" "), _c('ul', [_c('li', {
+    staticClass: "h4"
+  }, [_vm._v("+: Add")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("-: Sub.")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("*: Mult.")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("/: Div.")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("**: Power")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("//: Int. Div.")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nnumber1 = 10\nnumber2 = 2\n\nprint number1, \"+\", number2, \"=\", number1 + number2\n# 10 + 2 = 12\nprint number1, \"-\", number2, \"=\", number1 - number2\n# 10 - 2 = 8\nprint number1, \"*\", number2, \"=\", number1 * number2\n# 10 * 2 = 20\nprint number1, \"/\", number2, \"=\", number1 / number2\n# 10 / 2 = 5\nprint number1, \"**\", number2, \"=\", number1 ** number2\n# 10 ** 2 = 100\nprint number1, \"//\", number2, \"=\", number1 // number2\n# 10 // 2 = 5\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Python Basics",
+      "sub-title": "Conditions"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("Python uses boolean variables to evaluate conditions. The boolean values True and False are returned when an expression is compared or evaluated.")]), _vm._v(" "), _c('ul', [_c('li', {
+    staticClass: "h4"
+  }, [_vm._v("and")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("or")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("not/!=")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("==/is")]), _vm._v(" "), _c('li', {
+    staticClass: "h4"
+  }, [_vm._v("elif/else")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nx = 2\nprint(x == 2) # prints out True\nprint(x == 3) # prints out False\nprint(x < 3) # prints out True\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Data structures",
+      "sub-title": "List"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("Lists are a datatype you can use to store a collection of different pieces of information as a sequence under a single variable name. ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nzoo_animals = [\"pangolin\", \"cassowary\", \"sloth\", \"cow\"];\n\nif len(zoo_animals) > 3:\n  print \"The first animal is: \" + zoo_animals[0]\n  print \"The second animal is: \" + zoo_animals[1]\n  print \"The third animal is: \" + zoo_animals[2]\n  print \"The fourth animal is: \" + zoo_animals[3]\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Data structures",
+      "sub-title": "List"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("Basic Operations")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nages = [20, 21, 22, 26]\n\nages[3] = 30\nages.append(40)\nprint ages.pop()\nprint ages[3]\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Data structures",
+      "sub-title": "Dictionary"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("A dictionary is similar to a list, but you access values by looking up a key instead of an index. A key can be any string or number. ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('div', {
+    staticClass: "alert alert-info alert-with-icon"
+  }, [_c('span', {
+    attrs: {
+      "data-notify": "message"
+    }
+  }, [_c('b', [_vm._v("Note:")]), _vm._v(" Dictionaries are enclosed in curly braces. ")])]), _vm._v(" "), _c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nstock = {\n  \"banana\": 6,\n  \"apple\": 0,\n  \"orange\": 32,\n  \"pear\": 15\n}\n\nprint stock.items()\n# [('orange', 32), ('pear', 15), ('banana', 6), ('apple', 0)]\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Data structures",
+      "sub-title": "Tuple"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("A tuple is a sequence of immutable Python objects. Tuples are sequences, just like lists.")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('div', {
+    staticClass: "alert alert-info alert-with-icon"
+  }, [_c('span', {
+    attrs: {
+      "data-notify": "message"
+    }
+  }, [_c('b', [_vm._v("Note:")]), _vm._v(" The differences between tuples and lists are, the tuples cannot be changed unlike lists and tuples use parentheses, whereas lists use square brackets. ")])]), _vm._v(" "), _c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nthings = (\"omar\", \"20\", 10, \"1\")\n\nprint things[0] # omar\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Loop",
+      "sub-title": "Introduction"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("The Python for statement iterates over the members of a sequence in order, executing the block each time. Contrast the for statement with the ''while'' loop, used when a condition needs to be checked each iteration, or to repeat a block of code forever.")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('div', {
+    staticClass: "alert alert-success alert-with-icon"
+  }, [_c('span', {
+    attrs: {
+      "data-notify": "message"
+    }
+  }, [_c('b', [_vm._v("useful functions:")]), _vm._v(" range(_,_,_), zip(_,_), enumerate()")])]), _vm._v(" "), _c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nappleProducts = [\"iMac\", \"iPhone\", \"MacMini\", \"iPod\"]\nfor product in appleProducts:\n\tprint product\n\npeople = {'saleem' : 24, 'khaled': 24, 'omar' : 50}\nfor key, val in people.items():\n\tprint(key, val)\n\ncoordinates =[(2,5), (9,3), (0,4), (6,8)]\nfor (x, y) in coordinates:\n\tprint(x, y)\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Function",
+      "sub-title": "Introduction"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("A function is a block of organized, reusable code that is used to perform a single, related action. Functions provide better modularity for your application and a high degree of code reusing.")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport numpy as np\n\nresult = []\nderivative = []\n\nstep = 0.01\n\ndef math_function(x):\n    return x**2\n\ndef find_1st_order_derivative(func, x, h):\n    return (func(x+h) - func(x-h)) / (2 * h)\n\nfor i in np.arange(-5, 5, step):\n    result.append([i, math_function(i)])\n    derivative.append([i, find_1st_order_derivative(math_function, i, 0.01)])\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Numpy",
+      "sub-title": "Introduction"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h2', [_vm._v("NumPy is the fundamental package for scientific computing with Python.")]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-info",
+    attrs: {
+      "href": "http://www.numpy.org/",
+      "target": "_blank"
+    }
+  }, [_vm._v("Numpy Website")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport numpy\narr = numpy.array([])\narr = numpy.array([5, 8, 3, 7, 3, 9])\n\n# Arithmetic operations on numpy arrays:\nmult = arr * 2\nadd = arr + 2\ndiv = arr / 2\n\nzeros = numpy.zeros((3, 5))\nones = numpy.ones((5, 5))\n                        ")]), _vm._v("\n                    ")])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Numpy",
+      "sub-title": "Numpy arrays VS Python lists"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6 col-md-offset-3"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport numpy\nnumbersPy = [2, 4, 6] * 2\nnumbersNp = numpy.array([2, 4, 6])\nnumbersNp = numbersNp * 2\n\nprint \"numbersPy: \", numbersPy\n# numbersPy:  [2, 4, 6, 2, 4, 6]\nprint \"numbersNp: \", numbersNp\n# numbersNp:  [4  8 12]\n                        ")]), _vm._v("\n                    ")])])])])], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
