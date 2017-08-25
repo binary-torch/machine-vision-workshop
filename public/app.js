@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -10252,7 +10252,7 @@ Vue$3.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue$3);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6), __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6), __webpack_require__(11)))
 
 /***/ }),
 /* 2 */
@@ -20520,13 +20520,13 @@ return jQuery;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Navbar_vue__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Navbar_vue__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Navbar_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Navbar_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7e0d7256_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Navbar_vue__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7e0d7256_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Navbar_vue__ = __webpack_require__(22);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(19)
+  __webpack_require__(20)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20575,9 +20575,9 @@ if (false) {(function () {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Footer_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4149633e_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4149633e_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Footer_vue__ = __webpack_require__(24);
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -20863,20 +20863,75 @@ process.umask = function() { return 0; };
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-__webpack_require__(8);
-module.exports = __webpack_require__(73);
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3bf73654_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Card_vue__ = __webpack_require__(27);
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(25)
+}
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3bf73654_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Card_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/js/app/global/Card.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Card.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3bf73654", Component.options)
+  } else {
+    hotAPI.reload("data-v-3bf73654", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(9);
+module.exports = __webpack_require__(73);
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
-var _router = __webpack_require__(9);
+var _router = __webpack_require__(10);
 
 var _router2 = _interopRequireDefault(_router);
 
@@ -20912,7 +20967,7 @@ new _vue2.default({
 });
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20926,11 +20981,11 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(11);
+var _vueRouter = __webpack_require__(12);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _app = __webpack_require__(12);
+var _app = __webpack_require__(13);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20945,7 +21000,7 @@ var router = new _vueRouter2.default({
 exports.default = router;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 var g;
@@ -20972,7 +21027,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23486,28 +23541,6 @@ if (inBrowser && window.Vue) {
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6)))
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _routes = __webpack_require__(13);
-
-Object.defineProperty(exports, 'routes', {
-  enumerable: true,
-  get: function get() {
-    return _interopRequireDefault(_routes).default;
-  }
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23519,6 +23552,28 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _routes = __webpack_require__(14);
+
+Object.defineProperty(exports, 'routes', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_routes).default;
+  }
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _routes = __webpack_require__(15);
 
 var _routes2 = _interopRequireDefault(_routes);
 
@@ -23537,7 +23592,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 exports.default = [].concat(_toConsumableArray(_routes2.default), _toConsumableArray(_routes4.default), _toConsumableArray(_routes6.default));
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23547,7 +23602,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _components = __webpack_require__(15);
+var _components = __webpack_require__(16);
 
 exports.default = [{
     path: '/',
@@ -23560,7 +23615,7 @@ exports.default = [{
 }];
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23575,7 +23630,7 @@ var _vue = __webpack_require__(1);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _Home = __webpack_require__(16);
+var _Home = __webpack_require__(17);
 
 var _Home2 = _interopRequireDefault(_Home);
 
@@ -23584,18 +23639,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Home = exports.Home = _vue2.default.component('home', _Home2.default);
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_72415444_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(28);
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(17)
+  __webpack_require__(18)
 }
 var normalizeComponent = __webpack_require__(0)
 /* script */
@@ -23639,13 +23694,13 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23663,7 +23718,7 @@ var _Footer = __webpack_require__(4);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _Card = __webpack_require__(24);
+var _Card = __webpack_require__(7);
 
 var _Card2 = _interopRequireDefault(_Card);
 
@@ -23676,27 +23731,32 @@ exports.default = {
                 color: "blue",
                 title: "Day 1",
                 description: "Introduction to image processing, Python libraries and Raspberry Pi GPIO.",
-                route: 'day1'
+                route: 'day1',
+                active: true
             }, {
                 color: "red",
                 title: "Day 2",
                 description: "In this section, you will learn how to deal with images and its basic operations including: masking, bitwise operation, splitting, merging and drawing.",
-                route: 'day2'
+                route: 'home',
+                active: false
             }, {
                 color: "green",
                 title: "Day 3",
                 description: "In this section, you will learn more advance topics including: morphology operations, smoothing & blurring, color spaces, thresholding, gradients, histograms and edge detection",
-                route: 'day3'
+                route: 'home',
+                active: false
             }, {
                 color: "tail",
                 title: "Day 4",
                 description: "In this section, you will learn how to find, extract contours from images in addition to that, you will start your first basic object detection project.",
-                route: 'day4'
+                route: 'home',
+                active: false
             }, {
                 color: "dark",
                 title: "Day 5",
                 description: "In this section, you will learn the core concept of classification and how they work and by the end of this section you will build: Face & smile detection and Mini google image search.",
-                route: 'day5'
+                route: 'home',
+                active: false
             }]
         };
     },
@@ -23729,15 +23789,17 @@ exports.default = {
 //
 //
 //
+//
+//
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23770,7 +23832,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {};
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23819,7 +23881,7 @@ if (false) {
 }
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23853,7 +23915,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = {};
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23886,61 +23948,6 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-4149633e", esExports)
   }
 }
-
-/***/ }),
-/* 24 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3bf73654_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Card_vue__ = __webpack_require__(27);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(25)
-}
-var normalizeComponent = __webpack_require__(0)
-/* script */
-
-/* template */
-
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Card_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3bf73654_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_Card_vue__["a" /* default */],
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src/js/app/global/Card.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Card.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-3bf73654", Component.options)
-  } else {
-    hotAPI.reload("data-v-3bf73654", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
-
 
 /***/ }),
 /* 25 */
@@ -23976,9 +23983,17 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-    props: ['color', 'title', 'subTitle', 'description', 'route']
+    props: ['color', 'title', 'subTitle', 'subTitleTag', 'subTitleCenter', 'description', 'route', 'active']
 };
 
 /***/ }),
@@ -23995,17 +24010,33 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }, [_c('h1', {
     staticClass: "txt-white-color card-custom-title"
   }, [_c('b', [_vm._v(_vm._s(_vm.title))])])]), _vm._v(" "), _c('div', {
-    staticClass: "padding-50"
-  }, [_c('h1', [_vm._v(_vm._s(_vm.subTitle))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.description))]), _vm._v(" "), _c('router-link', {
+    class: {
+      'padding-50': _vm.description
+    }
+  }, [(_vm.subTitleTag == 'h1') ? _c('h1', {
+    class: {
+      'text-center': _vm.subTitleCenter
+    }
+  }, [_vm._v(_vm._s(_vm.subTitle))]) : _vm._e(), _vm._v(" "), (_vm.subTitleTag == 'h2') ? _c('h2', {
+    class: {
+      'text-center': _vm.subTitleCenter
+    }
+  }, [_vm._v(_vm._s(_vm.subTitle))]) : _vm._e(), _vm._v(" "), (_vm.subTitleTag == 'h3') ? _c('h3', {
+    class: {
+      'text-center': _vm.subTitleCenter
+    }
+  }, [_vm._v(_vm._s(_vm.subTitle))]) : _vm._e(), _vm._v(" "), (_vm.description) ? _c('p', [_vm._v(_vm._s(_vm.description))]) : _vm._e(), _vm._v(" "), (_vm.route) ? _c('router-link', {
     staticClass: "btn btn-compact bg-gradient btn-sm no-shadow",
-    class: _vm.color,
+    class: [{
+      'disabled': !_vm.active
+    }, _vm.color],
     attrs: {
       "tag": "button",
       "to": {
         name: _vm.route
       }
     }
-  }, [_vm._v("\n                Enter\n        ")])], 1)])
+  }, [_vm._v("\n                Enter\n        ")]) : _vm._e()], 1)])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -24040,8 +24071,10 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
         "color": section.color,
         "title": index + 1,
         "sub-title": section.title,
+        "sub-title-tag": "h1",
         "description": section.description,
-        "route": section.route
+        "route": section.route,
+        "active": section.active
       }
     }), _vm._v(" "), (_vm.sections.length - 1 != index) ? _c('div', {
       staticClass: "link-bar"
@@ -24105,7 +24138,7 @@ exports.default = [{
     component: _Main2.default,
     name: 'main',
     redirect: { name: 'day1' },
-    children: [].concat(_toConsumableArray(_routes2.default), _toConsumableArray(_routes4.default), _toConsumableArray(_routes6.default), _toConsumableArray(_routes8.default), _toConsumableArray(_routes10.default))
+    children: [].concat(_toConsumableArray(_routes2.default))
 }];
 
 /***/ }),
@@ -24353,9 +24386,16 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-    props: ['id', 'title', 'subTitle', 'cols', 'note', 'code', 'background', 'body']
+    props: ['title', 'subTitle']
 };
 
 /***/ }),
@@ -24365,11 +24405,19 @@ exports.default = {
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "section",
-    attrs: {
-      "id": _vm.id
+    staticClass: "section"
+  }, [_c('h1', {
+    staticClass: "bg-gradient blue text-center txt-white-color padding-20"
+  }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), (_vm.subTitle) ? _c('h4', {
+    staticClass: "bg-gray text-center padding-20"
+  }, [_vm._v(_vm._s(_vm.subTitle))]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "container center-content",
+    staticStyle: {
+      "height": "70%"
     }
-  }, [_c('h1', [_vm._v(_vm._s(_vm.title))])])
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_vm._t("body")], 2)])])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -24394,7 +24442,9 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_c('div', {
     staticClass: "section"
-  }, [_c('navbar-section'), _vm._v(" "), _c('h1', [_vm._v("Slide 1")])], 1)])
+  }, [_c('navbar-section'), _vm._v(" "), _c('h1', {
+    staticClass: "animated fadeIn"
+  }, [_vm._v("Slide 1")])], 1)])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -24524,29 +24574,108 @@ var _Footer = __webpack_require__(4);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
+var _Card = __webpack_require__(7);
+
+var _Card2 = _interopRequireDefault(_Card);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 exports.default = {
+    data: function data() {
+        return {
+            concepts: [{
+                title: "Pixels"
+            }, {
+                title: "Resolution"
+            }, {
+                title: "Coordinate System"
+            }, {
+                title: "Color Spaces"
+            }, {
+                title: "Drawing"
+            }, {
+                title: "Basic operations"
+            }, {
+                title: "Bitwise & Masking"
+            }, {
+                title: "Splitting & Merging"
+            }]
+        };
+    },
+
     components: {
         slide: _Slide2.default,
+        card: _Card2.default,
         'navbar-section': _Navbar2.default,
         'footer-section': _Footer2.default
     },
     mounted: function mounted() {
         $('#full-page').fullpage();
+        //            $.fn.fullpage.setResponsive(true);
     },
     beforeDestroy: function beforeDestroy() {
         $.fn.fullpage.destroy('all');
     }
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
+};
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
@@ -24561,7 +24690,112 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   }, [_c('div', {
     staticClass: "section"
-  }, [_c('navbar-section'), _vm._v(" "), _c('h1', [_vm._v("Slide 1")])], 1)])
+  }, [_c('navbar-section'), _vm._v(" "), _c('div', {
+    staticClass: "spacer-50 text-center h2"
+  }, [_vm._v("Day 2 Content")]), _vm._v(" "), _c('div', {
+    staticClass: "container"
+  }, _vm._l((_vm.concepts), function(concept, index) {
+    return _c('div', {
+      staticClass: "col-md-3"
+    }, [_c('card', {
+      staticClass: "margin-bottom-50",
+      attrs: {
+        "color": "blue",
+        "title": index + 1,
+        "sub-title-tag": "h3",
+        "sub-title-center": "true",
+        "sub-title": concept.title
+      }
+    })], 1)
+  }))], 1), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Pixel",
+      "sub-title": "Introduction"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h3', [_vm._v("\n                    The pixel (a word invented from \"picture element\") is the basic unit of programmable color on a computer display or in a computer image."), _c('br'), _vm._v("\n                    If we think of an image as a grid, each square in the grid contains a single pixel.\n                ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('svg', {
+    attrs: {
+      "width": "430px",
+      "height": "250px",
+      "viewBox": "0 0 430 250",
+      "version": "1.1",
+      "xmlns": "http://www.w3.org/2000/svg",
+      "xmlns:xlink": "http://www.w3.org/1999/xlink"
+    }
+  }, [_c('desc', [_vm._v("Created with Sketch.")]), _vm._v(" "), _c('defs', [_c('linearGradient', {
+    attrs: {
+      "x1": "100%",
+      "y1": "50%",
+      "x2": "0%",
+      "y2": "50%",
+      "id": "linearGradient-1"
+    }
+  }, [_c('stop', {
+    attrs: {
+      "stop-color": "#000000",
+      "offset": "0%"
+    }
+  }), _vm._v(" "), _c('stop', {
+    attrs: {
+      "stop-color": "#FFFFFF",
+      "offset": "100%"
+    }
+  })], 1), _vm._v(" "), _c('rect', {
+    attrs: {
+      "id": "path-2",
+      "x": "0",
+      "y": "0",
+      "width": "430",
+      "height": "250",
+      "rx": "5"
+    }
+  })], 1), _vm._v(" "), _c('g', {
+    attrs: {
+      "id": "Page-1",
+      "stroke": "none",
+      "stroke-width": "1",
+      "fill": "none",
+      "fill-rule": "evenodd"
+    }
+  }, [_c('g', {
+    attrs: {
+      "id": "Rectangle"
+    }
+  }, [_c('use', {
+    attrs: {
+      "fill": "url(#linearGradient-1)",
+      "fill-rule": "evenodd",
+      "xlink:href": "#path-2"
+    }
+  }), _vm._v(" "), _c('rect', {
+    attrs: {
+      "stroke": "#9B9B9B",
+      "stroke-width": "5",
+      "x": "2.5",
+      "y": "2.5",
+      "width": "425",
+      "height": "245",
+      "rx": "5"
+    }
+  })])])])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Resolution",
+      "sub-title": "Introduction"
+    }
+  }, [_c('div', {
+    staticClass: "text-center",
+    slot: "body"
+  }, [_c('h3', [_vm._v("\n                Resolution refers to the number of pixels in an image. Resolution is sometimes identified by the width and height of the image as well as the total number of pixels in the image. "), _c('br'), _vm._v("\n                A FULL HD image like the one in the previous slide needs a total of\n                "), _c('code', [_vm._v("1920 x 1080 = 2,073,600")]), _vm._v(" pixels only to construct that vividly colored picture.\n            ")]), _vm._v(" "), _c('img', {
+    attrs: {
+      "width": "500px",
+      "src": "/public/images/pages/day1/pixel1.png"
+    }
+  })])])], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
