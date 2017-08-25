@@ -23933,13 +23933,12 @@ var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _
     staticClass: "pull-left"
   }, [_c('ul', [_c('li', [_c('a', {
     attrs: {
-      "href": "http://www.binary-torch.com"
+      "href": "http://www.binary-torch.com",
+      "target": "_blank"
     }
   }, [_vm._v("\n                        Binary Torch\n                    ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "copyright pull-right"
-  }, [_vm._v("\n            © 2017, made with "), _c('i', {
-    staticClass: "fa fa-heart heart"
-  }), _vm._v(" in Malaysia\n        ")])])])
+  }, [_vm._v("\n            © 2017, made with ❤︎ in Malaysia\n        ")])])])
 }]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
