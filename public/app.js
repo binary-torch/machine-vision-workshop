@@ -23739,8 +23739,8 @@ exports.default = {
                 color: "red",
                 title: "Day 2",
                 description: "In this section, you will learn how to deal with images and its basic operations including: masking, bitwise operation, splitting, merging and drawing.",
-                route: 'home',
-                active: false
+                route: 'day2',
+                active: true
             }, {
                 color: "green",
                 title: "Day 3",
@@ -24139,7 +24139,7 @@ exports.default = [{
     component: _Main2.default,
     name: 'main',
     redirect: { name: 'day1' },
-    children: [].concat(_toConsumableArray(_routes2.default))
+    children: [].concat(_toConsumableArray(_routes2.default), _toConsumableArray(_routes4.default))
 }];
 
 /***/ }),
@@ -24856,9 +24856,10 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
 exports.default = {
-    props: ['title', 'subTitle']
+    props: ['title', 'subTitle', 'color']
 };
 
 /***/ }),
@@ -24870,7 +24871,8 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   return _c('div', {
     staticClass: "section"
   }, [_c('h1', {
-    staticClass: "bg-gradient blue text-center txt-white-color padding-20"
+    staticClass: "bg-gradient text-center txt-white-color padding-20",
+    class: _vm.color ? _vm.color : 'blue'
   }, [_vm._v(_vm._s(_vm.title))]), _vm._v(" "), (_vm.subTitle) ? _c('h4', {
     staticClass: "bg-gray text-center padding-20"
   }, [_vm._v(_vm._s(_vm.subTitle))]) : _vm._e(), _vm._v(" "), _c('div', {
@@ -25413,6 +25415,219 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -25445,7 +25660,12 @@ exports.default = {
     },
     mounted: function mounted() {
         $('#full-page').fullpage();
-        //            $.fn.fullpage.setResponsive(true);
+        //            $.fn.fullpage.setAutoScrolling(false);
+        $(document).ready(function () {
+            $('pre code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
     },
     beforeDestroy: function beforeDestroy() {
         $.fn.fullpage.destroy('all');
@@ -25475,7 +25695,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }, [_c('card', {
       staticClass: "margin-bottom-50",
       attrs: {
-        "color": "blue",
+        "color": "red",
         "title": index + 1,
         "sub-title-tag": "h3",
         "sub-title-center": "true",
@@ -25485,13 +25705,14 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   }))], 1), _vm._v(" "), _c('slide', {
     attrs: {
       "title": "Pixel",
-      "sub-title": "Introduction"
+      "sub-title": "Introduction",
+      "color": "red"
     }
   }, [_c('div', {
     slot: "body"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_c('h3', [_vm._v("\n                    The pixel (a word invented from \"picture element\") is the basic unit of programmable color on a computer display or in a computer image."), _c('br'), _vm._v("\n                    If we think of an image as a grid, each square in the grid contains a single pixel.\n                ")])]), _vm._v(" "), _c('div', {
+  }, [_c('h3', [_vm._v("\n                        The pixel (a word invented from \"picture element\") is the basic unit of programmable color on a computer display or in a computer image."), _c('br'), _vm._v("\n                        If we think of an image as a grid, each square in the grid contains a single pixel.\n                    ")])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
   }, [_c('svg', {
     attrs: {
@@ -25560,17 +25781,283 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
   })])])])])])]), _vm._v(" "), _c('slide', {
     attrs: {
       "title": "Resolution",
-      "sub-title": "Introduction"
+      "sub-title": "Introduction",
+      "color": "red"
     }
   }, [_c('div', {
     staticClass: "text-center",
     slot: "body"
-  }, [_c('h3', [_vm._v("\n                Resolution refers to the number of pixels in an image. Resolution is sometimes identified by the width and height of the image as well as the total number of pixels in the image. "), _c('br'), _vm._v("\n                A FULL HD image like the one in the previous slide needs a total of\n                "), _c('code', [_vm._v("1920 x 1080 = 2,073,600")]), _vm._v(" pixels only to construct that vividly colored picture.\n            ")]), _vm._v(" "), _c('img', {
+  }, [_c('h3', [_vm._v("\n                    Resolution refers to the number of pixels in an image. Resolution is sometimes identified by the width and height of the image as well as the total number of pixels in the image. "), _c('br'), _vm._v("\n                    A FULL HD image like the one in the previous slide needs a total of\n                    "), _c('span', {
+    staticClass: "txt-red-color"
+  }, [_vm._v("1920 x 1080 = 2,073,600")]), _vm._v(" pixels only to construct that vividly colored picture.\n                ")]), _vm._v(" "), _c('img', {
     attrs: {
       "width": "500px",
       "src": "/public/images/pages/day1/pixel1.png"
     }
-  })])])], 1)
+  })])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Coordinates System",
+      "sub-title": "Introduction",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('ul', [_c('li', [_c('h3', [_vm._v("It starts from the top left corner")])]), _vm._v(" "), _c('li', [_c('h4', [_vm._v("+Y axis is downwards")])]), _vm._v(" "), _c('li', [_c('h4', [_vm._v("+X axis remains towards the right")])])]), _vm._v(" "), _c('div', {
+    staticClass: "alert alert-info alert-with-icon"
+  }, [_c('span', {
+    attrs: {
+      "data-notify": "message"
+    }
+  }, [_c('b', [_vm._v("Note:")]), _vm._v(" Pay attention that center point in images is different! ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "300px",
+      "src": "public/images/pages/day2/coordinates.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Color Spaces",
+      "sub-title": "RGB",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h3', [_vm._v("Color space is defined by the three chromaticities of the red, green, and blue additive primaries, and can produce any chromaticity that is the triangle defined by those primary colors.")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "70%",
+      "src": "public/images/pages/day2/rgb.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Color Spaces",
+      "sub-title": "HSV",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h3', [_vm._v("HSV color space has three components: hue, saturation and value. ‘Value’ is sometimes substituted with ‘brightness’ and then it is known as HSB. It is also known as the hex-cone color model.")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "70%",
+      "src": "public/images/pages/day2/hsv.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Color Spaces",
+      "sub-title": "RGB VS HSV",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6 col-md-offset-3"
+  }, [_c('div', {
+    staticClass: "card"
+  }, [_c('div', {
+    staticClass: "card-header",
+    attrs: {
+      "data-background-color": "red"
+    }
+  }, [_c('h4', {
+    staticClass: "card-title"
+  }, [_vm._v("RGB VS HSV")])]), _vm._v(" "), _c('div', {
+    staticClass: "card-content table-responsive table-full-width"
+  }, [_c('table', {
+    staticClass: "table text-center"
+  }, [_c('thead', {
+    staticClass: "text-danger"
+  }, [_c('th', {
+    staticClass: "text-center"
+  }, [_vm._v("RGB")]), _vm._v(" "), _c('th', {
+    staticClass: "text-center"
+  }, [_vm._v("HSV")])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_vm._v("Simplicity in representation and storage")]), _vm._v(" "), _c('td', [_vm._v("Close to human perception")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Some point operations are faster")]), _vm._v(" "), _c('td', [_vm._v("Easy interpolation between colors")])]), _vm._v(" "), _c('tr', [_c('td', [_vm._v("Have lighting and color properties together")]), _vm._v(" "), _c('td', [_vm._v("Invariant to illumination transforms")])])])])])])])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Color Spaces",
+      "sub-title": "Gray Scale",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h3', [_vm._v("A grayscale (or graylevel) image is simply one layer in which the only colors are shades of gray, unlike the RGB that needs 3 layers for Red, Green and Blue rather than one layer of grayscale. Therefore, grayscale images have smaller size compared to color.")]), _vm._v(" "), _c('div', {
+    staticClass: "alert alert-danger alert-with-icon"
+  }, [_c('span', {
+    attrs: {
+      "data-notify": "message"
+    }
+  }, [_c('b', [_vm._v("Applications:")]), _vm._v(" Image enhancement, Edge detection, Non-color feature extraction ..etc.")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "80%",
+      "src": "public/images/pages/day2/gray.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Drawing",
+      "sub-title": "Introduction",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6 col-md-offset-3"
+  }, [_c('img', {
+    attrs: {
+      "width": "100%",
+      "src": "public/images/pages/day2/drawing.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Drawing",
+      "sub-title": "Line",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\ncv2.line(image, point1, point2, color)\n# color = (B, G, R)\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "80%",
+      "src": "public/images/pages/day2/line.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Drawing",
+      "sub-title": "Line",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\ncv2.rectangle(image, point1, point2, color, thickness, line type, shift)\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "80%",
+      "src": "public/images/pages/day2/drawing.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Drawing",
+      "sub-title": "Circle",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\ncv2.circe(image, center, radius, color, thickness, line type, shift)\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "80%",
+      "src": "public/images/pages/day2/circle.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Basic operations",
+      "sub-title": "Resize",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\ncv2.resize(image, None, fx, fy, interpolation=cv2.INTER_CUBIC)\n# OR\ncv2.resize(image, dim, interpolation=cv2.INTER_AREA)\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "height": "500px",
+      "src": "public/images/pages/day2/resize.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Basic operations",
+      "sub-title": "Crop",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\ncroped = image[y1:y2, x1:x2]\n                        ")]), _vm._v("\n                    ")]), _vm._v(" "), _c('div', {
+    staticClass: "alert alert-danger alert-with-icon"
+  }, [_c('span', {
+    attrs: {
+      "data-notify": "message"
+    }
+  }, [_c('b', [_vm._v("IMPORTANT NOTE:")]), _vm._v(" in numpy matrices, height (y-axis) is written first.")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "90%",
+      "src": "public/images/pages/day2/crop.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Basic operations",
+      "sub-title": "Rotate",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\n# D = IM\n# M = [[cosx, -sinx], [sinx, cosx]]\nM = cv2.getRotationMatrix2D(center, angle, scale)\nnewImage = cv2.warpAffine(image, M, imgDim)\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "90%",
+      "src": "public/images/pages/day2/rotate.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Basic operations",
+      "sub-title": "Flip",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport cv2\n# flip the image horizontally\nflipped = cv2.flip(image, 1)\n\n# flip the image vertically\nflipped = cv2.flip(image, 0)\n\n# flip the image along both axes\nflipped = cv2.flip(image, -1)\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "height": "500px",
+      "src": "public/images/pages/day2/flip.png"
+    }
+  })])])])], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
