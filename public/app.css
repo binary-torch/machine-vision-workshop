@@ -42,6 +42,10 @@
     font-weight: 900;
     font-size: 5em;
 }
+
+#pi {
+    background: url('./images/pages/day1/Pi/pi2.jpg') no-repeat; background-size: cover;
+}
 /*
 
 Atom One Dark by Daniel Gamage
