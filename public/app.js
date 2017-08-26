@@ -25628,6 +25628,76 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     data: function data() {
@@ -26056,6 +26126,93 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     attrs: {
       "height": "500px",
       "src": "public/images/pages/day2/flip.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Bitwise & Masking",
+      "sub-title": "AND, OR, XOR and NOT",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport cv2\ncv2.bitwise_or(src1, src2, dst,mask)    # OR\ncv2.bitwise_and(src1, src2, dst ,mask)  # AND\ncv2.bitwise_xor(src1, src2, dst ,mask)  # XOR\ncv2.bitwise_not(src1, src2, dst ,mask)  # NOT\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "height": "500px",
+      "src": "public/images/pages/day2/bitwise.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Bitwise & Masking",
+      "sub-title": "Masking",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport cv2\n\nmask = np.zeros(image.shape[:2], dtype=\"uint8\")\ncv2.circle(mask, (145, 200), 100, 255, -1)\nmasked = cv2.bitwise_and(image, image, mask=mask)\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "height": "500px",
+      "src": "public/images/pages/day2/bitwise.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Splitting & Merging",
+      "sub-title": "Introduction",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('pre', [_vm._v("                        "), _c('code', {
+    staticClass: "python"
+  }, [_vm._v("\nimport cv2\n\n(B, G, R) = cv2.split(image)\nmerged = cv2.merge([B, G, R])\n                        ")]), _vm._v("\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 text-center"
+  }, [_c('img', {
+    attrs: {
+      "height": "500px",
+      "src": "public/images/pages/day2/splitting.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Splitting & Merging",
+      "sub-title": "Introduction",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-8 col-md-offset-2 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "100%",
+      "src": "public/images/pages/day2/splitting1.png"
+    }
+  })])])]), _vm._v(" "), _c('slide', {
+    attrs: {
+      "title": "Splitting & Merging",
+      "sub-title": "Introduction",
+      "color": "red"
+    }
+  }, [_c('div', {
+    slot: "body"
+  }, [_c('div', {
+    staticClass: "col-md-8 col-md-offset-2 text-center"
+  }, [_c('img', {
+    attrs: {
+      "width": "100%",
+      "src": "public/images/pages/day2/splitting2.png"
     }
   })])])])], 1)
 }
